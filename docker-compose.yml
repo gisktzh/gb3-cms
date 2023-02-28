@@ -3,7 +3,7 @@ volumes:
     driver: local
     driver_opts:
       type: none
-      device: $PWD/.grav
+      device: $PWD/.grav/user
       o: bind
 
 services:
@@ -12,4 +12,4 @@ services:
     ports:
       - 8080:80
     volumes:
-      - grav-data:/var/www/html
+      - grav-data:/var/www/html/user
