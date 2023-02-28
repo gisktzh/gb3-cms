@@ -18,3 +18,29 @@ This docker image is currently pretty minimal and uses:
 Original dockerfile from: https://github.com/getgrav/docker-grav
 
 See https://getgrav.org/ for more information.
+
+## Building the image from Dockerfile
+
+```
+docker build -t grav:latest .
+```
+
+## Running Grav Image with Latest Grav + Admin:
+
+```
+docker run -p 8000:80 grav:latest
+```
+
+Point browser to `http://localhost:8000` and create user account...
+
+## Running Grav Image with Latest Grav + Admin with a named volume (can be used in production)
+
+```
+docker run -d -p 8000:80 --restart always -v grav_data:/var/www/html grav:latest
+```
+
+## Running Grav Image with docker-compose and a volume mapped to a local directory (./.grav)
+
+```
+docker-compose up -d -f ./docker-compose.yml
+```
