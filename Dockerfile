@@ -1,4 +1,4 @@
-FROM php:7.4-apache
+FROM php:8.1.16-apache
 LABEL maintainer="Andy Miller <rhuk@getgrav.org> (@rhukster)"
 
 # Enable Apache Rewrite + Expires Module
@@ -43,9 +43,10 @@ RUN { \
     echo 'expose_php=off'; \
     } > /usr/local/etc/php/conf.d/php-recommended.ini
 
-RUN pecl install apcu \
-    && pecl install yaml-2.0.4 \
-    && docker-php-ext-enable apcu yaml
+# not compatible with PHP 8.1.16
+#RUN pecl install apcu \
+#    && pecl install yaml-2.0.4 \
+#    && docker-php-ext-enable apcu yaml
 
 # Set user to www-data
 RUN chown www-data:www-data /var/www
@@ -65,7 +66,7 @@ RUN curl -o grav-admin.zip -SL https://getgrav.org/download/core/grav-admin/${GR
 RUN (crontab -l; echo "* * * * * cd /var/www/html;/usr/local/bin/php bin/grav scheduler 1>> /dev/null 2>&1") | crontab -
 
 # Copy custom data
-COPY data /var/www/html
+COPY ./data /var/www/html
 
 # Return to root user
 USER root
