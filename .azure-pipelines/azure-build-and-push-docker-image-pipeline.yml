@@ -1,0 +1,30 @@
+name: Azure build Docker image and push it to a container registry
+
+variables:
+  VM_IMAGE: 'ubuntu-latest'
+  REPOSITORY: 'gb3-grav-cms'
+  DOCKERFILE_PATH: '**/Dockerfile'
+  CONTAINER_REGISTRY: 'gb3registry.azurecr.io'
+  TAG: 'latest'
+  DOCKER_REGISTRY_SERVICE_CONNECTION: 'gb3registry'
+
+jobs:
+  - job: build_and_push_docker_image_job
+    displayName: Build and push docker image job
+    pool:
+      vmImage: $(VM_IMAGE)
+    steps:
+      - task: Docker@2
+        displayName: Login to Container Registry
+        inputs:
+          command: login
+          containerRegistry: $(DOCKER_REGISTRY_SERVICE_CONNECTION)
+      - task: Docker@2
+        displayName: Build and push an image to container registry
+        inputs:
+          command: buildAndPush
+          repository: $(REPOSITORY)
+          dockerfile: $(DOCKERFILE_PATH)
+          containerRegistry: $(CONTAINER_REGISTRY)
+          tags: |
+            $(TAG)
