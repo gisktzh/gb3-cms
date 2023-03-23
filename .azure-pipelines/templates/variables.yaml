@@ -1,0 +1,6 @@
+variables:
+  VM_IMAGE: 'ubuntu-latest'
+  REPOSITORY: 'gb3-grav-cms'
+  DOCKERFILE_PATH: '**/Dockerfile'
+  CONTAINER_REGISTRY: 'gb3registry.azurecr.io'
+  TAG: 'latest'

@@ -1,15 +1,32 @@
 volumes:
   grav-data:
-    driver: local
-    driver_opts:
-      type: none
-      device: $PWD/.grav/user
-      o: bind
 
 services:
   grav:
     build: ./
+    image: gb3-grav-cms:latest
     ports:
       - 8080:80
     volumes:
-      - grav-data:/var/www/html/user
+      - type: bind
+        source: ./data/user/accounts/admin.yaml
+        target: /var/www/html/user/accounts/admin.yaml
+      - type: bind
+        source: ./data/user/accounts/writer.yaml
+        target: /var/www/html/user/accounts/writer.yaml
+      - type: bind
+        source: ./data/user/blueprints/pages
+        target: /var/www/html/user/blueprints/pages
+      - type: bind
+        source: ./data/user/config/groups.yaml
+        target: /var/www/html/user/config/groups.yaml
+      - type: bind
+        source: ./data/user/pages
+        target: /var/www/html/user/pages
+      - type: bind
+        source: ./data/user/themes/quark/templates
+        target: /var/www/html/user/themes/quark/templates
+
+      - type: volume
+        source: grav-data
+        target: /var/www/html

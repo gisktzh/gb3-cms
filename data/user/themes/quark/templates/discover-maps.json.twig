@@ -1,0 +1,8 @@
+{% set current_month = 'today'|date('Ym') %}
+{% set active_items = page
+    .find('/discover-maps')
+    .children|filter(v => (v.header.from_date|date('Ym') <= current_month and v.header.to_date|date('Ym') >= current_month)) %}
+
+{"discover-maps":[
+    {{- active_items|map(active_item => active_item.header|json_encode)|join(',')|raw -}}
+]}

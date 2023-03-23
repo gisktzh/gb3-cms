@@ -1,0 +1,13 @@
+state: enabled
+email: writer@example.com
+fullname: 'jon writer'
+language: en
+content_editor: default
+twofa_enabled: false
+avatar: {  }
+groups:
+  - publisher
+  - maintainer
+access:
+  site:
+    login: true
