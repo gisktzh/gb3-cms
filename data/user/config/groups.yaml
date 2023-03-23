@@ -1,0 +1,21 @@
+publisher:
+  access:
+    admin:
+      login: true
+      pages: true
+      statistics: true
+  enabled: true
+maintainer:
+  access:
+    admin:
+      login: true
+      cache: true
+      maintenance: true
+      statistics: true
+      plugins: true
+      themes: true
+      tools: true
+      users:
+        read: true
+        list: true
+  enabled: true
