@@ -71,6 +71,8 @@ COPY ./data /var/www/html
 # Return to root user
 USER root
 
+RUN chown -R www-data:www-data /var/www
+
 # Copy init scripts
 # COPY docker-entrypoint.sh /entrypoint.sh
 

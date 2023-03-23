@@ -28,7 +28,7 @@ docker build -t gb3-grav-cms:latest .
 ## Running Grav Image with Latest Grav + Admin:
 
 ```
-docker run -p 8000:80 gb3-grav-cms:latest
+docker run -p 8080:80 gb3-grav-cms:latest
 ```
 
 Point browser to `http://localhost:8000` and create user account...
