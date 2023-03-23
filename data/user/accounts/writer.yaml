@@ -3,11 +3,11 @@ email: writer@example.com
 fullname: 'jon writer'
 language: en
 content_editor: default
-twofa_enabled: false
 avatar: {  }
 groups:
   - publisher
   - maintainer
+hashed_password: ***REMOVED***
 access:
   site:
     login: true
