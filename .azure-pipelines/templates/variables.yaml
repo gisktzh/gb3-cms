@@ -1,6 +1,10 @@
 variables:
-  VM_IMAGE: 'ubuntu-latest'
-  REPOSITORY: 'gb3-grav-cms'
-  DOCKERFILE_PATH: '**/Dockerfile'
-  CONTAINER_REGISTRY: '***REMOVED***'
-  TAG: 'latest'
+  # Container registry service connection established during pipeline creation
+  dockerRegistryServiceConnection: 'gb3connection'
+  imageRepository: 'gb3-grav-cms'
+  containerRegistry: '***REMOVED***'
+  dockerfilePath: '**/Dockerfile'
+  tag: 'latest' # '$(Build.BuildId)'
+
+  # Agent VM image name
+  vmImageName: 'ubuntu-latest'
