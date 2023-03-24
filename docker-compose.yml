@@ -8,21 +8,37 @@ services:
     ports:
       - 8080:80
     volumes:
+        # Accounts
       - type: bind
         source: ./data/user/accounts/admin.yaml
         target: /var/www/html/user/accounts/admin.yaml
       - type: bind
         source: ./data/user/accounts/writer.yaml
         target: /var/www/html/user/accounts/writer.yaml
+        # Blueprints
       - type: bind
         source: ./data/user/blueprints/pages
         target: /var/www/html/user/blueprints/pages
+        # Flex-Objects - topics
+      - type: bind
+        source: ./data/user/plugins/flex-objects/blueprints/flex-objects/topics.yaml
+        target: /var/www/html/user/plugins/flex-objects/blueprints/flex-objects/topics.yaml
+      - type: bind
+        source: ./data/user/data/flex-objects
+        target: /var/www/html/user/data/flex-objects
+        # Groups
       - type: bind
         source: ./data/user/config/groups.yaml
         target: /var/www/html/user/config/groups.yaml
+        # Pages
       - type: bind
         source: ./data/user/pages
         target: /var/www/html/user/pages
+        # Plugins
+      - type: bind
+        source: ./data/user/plugins/topics
+        target: /var/www/html/user/plugins/topics
+        # Templates
       - type: bind
         source: ./data/user/themes/quark/templates
         target: /var/www/html/user/themes/quark/templates
