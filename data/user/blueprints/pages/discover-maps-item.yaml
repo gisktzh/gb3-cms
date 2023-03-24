@@ -36,9 +36,12 @@ form:
               validate:
                 required: false
             header.id:
-              type: text
+              type: select
               style: vertical
-              label: 'Map ID'
+              label: 'Topic ID'
+              placeholder: Eingabe einer Topic ID
+              default: null
+              data-options@: '\Grav\Plugin\TopicsPlugin::topics'
               validate:
                 required: true
             header.from_date:

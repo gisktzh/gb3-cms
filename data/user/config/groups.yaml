@@ -4,6 +4,7 @@ publisher:
       login: true
       pages: true
       statistics: true
+      topics: true
   enabled: true
 maintainer:
   access:

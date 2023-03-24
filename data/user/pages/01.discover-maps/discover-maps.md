@@ -1,5 +1,5 @@
 ---
-title: discover-maps
+title: Karten entdecken
 visible: false
 content:
     items: '@self.children'
@@ -13,6 +13,5 @@ permissions:
             create: true
             read: true
     inherit: false
-login: {  }
 ---
 

@@ -17,3 +17,4 @@
 
 # Grav
 .grav/
+/data/user/pages/*/*/*
