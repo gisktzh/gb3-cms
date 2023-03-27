@@ -63,6 +63,10 @@ for file in "${DEFAULT_FILES[@]}"; do
   echo ""
 done
 
+# Set ownership once again to overwrite root user when using bind mounts
+echo "Running CHMOD on user directory again..."
+chown -R www-data:www-data /var/www/html/user
+
 # start the actual application
 echo -e "We are good to go, booting GravCMS now! (つ -‘ _ ‘- )つ\n"
 cron && apache2-foreground
