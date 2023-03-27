@@ -1,5 +1,5 @@
-title: Topics
-description: Simple contact directory with tags.
+title: Discover Maps
+description: Ein Ordner mit vergangenen, aktuellen und zukünftigen Karten zum Entdecken.
 type: flex-objects
 
 # Flex Configuration
@@ -8,14 +8,14 @@ config:
   admin:
     # Admin router (optional)
     router:
-      path: '/topics'
+      path: '/discovermaps'
 
     # Admin menu (optional)
     menu:
       list:
-        route: '/topics'
-        title: Topics
-        icon: fa-address-card-o
+        route: '/discovermaps'
+        title: Karten entdecken
+        icon: fa-eye
         # Authorization to collection admin
         authorize: ['admin.topics.list', 'admin.super']
         # Priority -10 .. 10 (highest goes up)
@@ -29,39 +29,29 @@ config:
       # Primary permissions
       admin.topics:
         type: crudpl
-        label: Topics
+        label: DiscoverMaps
 
     # List view
     list:
       title: name
       fields:
-        published:
-          field:
-            type: toggle
-            label: Publ
-          width: 8
-        topic_id:
+        header.title:
           link: edit
-        topic_name:
+        header.id:
           link: edit
-#        last_name:
-#          link: edit
-#        first_name:
-#          link: edit
-#        email:
-#        website:
-#        tags:
+        header.from_date:
+        header.to_date:
 
     # Edit View
     edit:
       title:
-        template: '{{ object.topic_name }} ({{ object.topic_id }})'
+        template: '{{ object.header.title }}'
 
     # Preview View
     preview:
-      enabled: false
+      enabled: true
       route:
-        #template: '/plugins/flex-objects/directory:topics'
+        #template: '/plugins/flex-objects/directory:discovermaps'
 
     # Data Export
     export:
@@ -69,7 +59,7 @@ config:
       method: 'jsonSerialize'
       formatter:
         class: 'Grav\Framework\File\Formatter\YamlFormatter'
-      filename: 'topics'
+      filename: 'discovermaps'
 
   # Site Configuration
   site:
@@ -84,7 +74,7 @@ config:
           - 'flex/{TYPE}/object/{LAYOUT}{EXT}'
       defaults:
         # Default template {TYPE}; overridden by filename of this blueprint if template folder exists
-        type: topics
+        type: discovermaps
         # Default template {LAYOUT}; can be overridden in render calls (usually Twig in templates)
         layout: default
 
@@ -97,50 +87,73 @@ config:
     # Index class to be used, works as a quick database-like lookup index
     index: 'Grav\Common\Flex\Types\Generic\GenericIndex'
     storage:
-      # Storage class, use single file storage (does not support images and assets)
-      class: 'Grav\Framework\Flex\Storage\SimpleStorage'
+      # Storage class, use a folder storage (does support images and assets)
+      class: 'Grav\Framework\Flex\Storage\FolderStorage'
       options:
         formatter:
           # File formatter class, in this case the file is stored in markdown
           class: 'Grav\Framework\File\Formatter\JsonFormatter'
         # JSON file where all the objects will be stored
-        folder: user-data://flex-objects/topics.json
+        folder: user-data://flex-objects/discovermaps
+    ordering:
+      header.from_date: ASC
+      header.to_date: ASC
     search:
       # Search options
       options:
         contains: 1
       # Fields to be searched
       fields:
-        - topic_id
-        - topic_name
-#        - last_name
-#        - first_name
-#        - email
+        - header.title
+        - header.id
 
 form:
   validation: loose
 
   fields:
-    published:
-      type: toggle
-      label: Published
-      highlight: 1
-      default: 1
-      options:
-        1: PLUGIN_ADMIN.YES
-        0: PLUGIN_ADMIN.NO
-      validate:
-        type: bool
-        required: true
-
-    topic_id:
+    header.title:
       type: text
-      label: Topic ID
+      autofocus: true
+      style: vertical
+      label: 'Titel'
       validate:
         required: true
-
-    topic_name:
-      type: text
-      label: Topic Name
+    header.description:
+      type: textarea
+      style: vertical
+      label: 'Beschreibung'
+      validate:
+        required: true
+    header.image:
+      name: image
+      type: file
+      autofocus: false
+      destination: 'assets/uploads'
+      style: vertical
+      label: 'Image'
+      multiple: false
+      accept:
+        - image/*
+      validate:
+        required: false
+    header.id:
+      type: select
+      style: vertical
+      label: 'Topic ID'
+      placeholder: Eingabe einer Topic ID
+      default: null
+      data-options@: '\Grav\Plugin\TopicsPlugin::topics'
+      validate:
+        required: true
+    header.from_date:
+      type: date
+      style: vertical
+      label: 'Sichbar von'
+      validate:
+        required: true
+    header.to_date:
+      type: date
+      style: vertical
+      label: 'Sichbar bis'
       validate:
         required: true

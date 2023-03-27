@@ -6,7 +6,6 @@ content_editor: default
 avatar: {  }
 groups:
   - publisher
-  - maintainer
 hashed_password: ***REMOVED***
 access:
   site:
