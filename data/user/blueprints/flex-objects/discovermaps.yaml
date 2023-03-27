@@ -49,7 +49,7 @@ config:
 
     # Preview View
     preview:
-      enabled: true
+      enabled: false
       route:
         #template: '/plugins/flex-objects/directory:discovermaps'
 
@@ -125,17 +125,16 @@ form:
       validate:
         required: true
     header.image:
-      name: image
       type: file
-      autofocus: false
-      destination: 'assets/uploads'
       style: vertical
-      label: 'Image'
+      label: 'Kartenbild <span class="required">*</span>'
+      autofocus: false
+      destination: 'assets/uploads/discovermaps'
       multiple: false
       accept:
         - image/*
       validate:
-        required: false
+        required: false # required does not work for files/images; known bug: https://github.com/getgrav/grav-plugin-form/issues/116
     header.id:
       type: select
       style: vertical

@@ -1,12 +1,14 @@
 state: enabled
 email: writer@example.com
-fullname: 'jon writer'
-language: en
+fullname: writer
+language: de
 content_editor: default
 avatar: {  }
 groups:
   - publisher
 hashed_password: ***REMOVED***
+twofa_enabled: false
+twofa_secret: GIJYBH5YNBIR7VGDYHY2QM6QCRWKX7XS
 access:
   site:
     login: true
