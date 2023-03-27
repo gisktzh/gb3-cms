@@ -128,6 +128,7 @@ form:
       type: file
       style: vertical
       label: 'Kartenbild <span class="required">*</span>'
+      random_name: true
       autofocus: false
       destination: 'assets/uploads/discovermaps'
       multiple: false
