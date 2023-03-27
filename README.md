@@ -44,3 +44,19 @@ docker run -d -p 8000:80 --restart always -v grav_data:/var/www/html gb3-grav-cm
 ```
 docker-compose up -d -f ./docker-compose.yml
 ```
+
+# Deployment
+
+The deployment takes two bind mounts to persist user data:
+
+* `/var/www/html/user/pages`: Persists the actual page content
+* `/var/www/html/user/accounts`: Persists account data
+
+In order to still provide defaults, the Dockerfile uses an entrypoint script. The entrypoint script has a list of files
+that are checked on each system boot. If they exist in the mounted directory, it either means that the app has been
+booted before OR that the files have been added by the users themselves. If the files do not exist, they are copied and
+as such loaded by GravCMS.
+
+To run this locally:
+`docker run --mount type=bind,source="C:\tmp\grav\folder1",target=/var/www/html/user/accounts --mount type=bind,source="C:\tmp\grav\folder2",target=/var/www/html/user/pages --name gb3-cms grav-gb3/latest  `
+This command will boot the container and mount two local folders for synchronizing data.
