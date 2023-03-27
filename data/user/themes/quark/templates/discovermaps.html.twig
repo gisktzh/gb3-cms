@@ -1,0 +1,47 @@
+{% set flex = grav.get('flex_objects') %}
+{% set discovermaps = flex.directory('discovermaps') %}
+{% set collection = discovermaps.getCollection() %}
+
+<html>
+    <body>
+        <div>
+            {% set current_month = 'today'|date('Ym') %}
+
+            {{  current_month }}<br>
+            {{ '2022-01-01'|date('Ym') }}<br>
+            {{ '2022-01-01'|date('Ym') <= current_month }}<br>
+            {{ '2022-05-31'|date('Ym') }}<br>
+            {{ '2022-05-31'|date('Ym') >= current_month }}<br>
+
+            {% set filter_results = collection|filter(v => (v.header.from_date|date('Ym') <= current_month and v.header.to_date|date('Ym') >= current_month)) %}
+            {% set active_items = filter_results|map(result => result.header) %}
+
+            {{ filter_results|map(result => result.header|json_encode)|join(',') }}<br>
+
+            <br>
+            {% set headers = filter_results|map(result => result.header) %}
+            first: {{ headers|first.image|first|json_encode }}<br>
+            <br>
+
+            bröter
+            <br>
+            {"discover-maps":[
+            {% for active_item in active_items %}
+                {% if active_item.image %}
+                    {% set active_item = active_item|merge({'image': (active_item.image|first)}) %}
+                {% endif %}
+                {{- active_item|json_encode|raw -}}
+                {% if not loop.last %}
+                    ,
+                {% endif %}
+            {% endfor %}
+            ]}
+            <br>
+            <br>
+
+            {"discover-maps":[
+            {{- filter_results|map(result => result.header|json_encode)|join(',')|raw -}}
+            ]}
+        </div>
+    </body>
+</html>
