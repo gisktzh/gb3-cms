@@ -73,12 +73,11 @@ USER root
 
 RUN chown -R www-data:www-data /var/www
 
-# Copy init scripts
-# COPY docker-entrypoint.sh /entrypoint.sh
 
-# provide container inside image for data persistence
-VOLUME ["/var/www/html"]
+# Copy folders to temporary folder to setup default creation in entrypoint
+RUN  mkdir -p /.docker/grav_defaults
+COPY ./data/user/accounts /.docker/grav_defaults/user/accounts
+COPY ./data/user/pages /.docker/grav_defaults/user/pages
+COPY .docker/entrypoint.sh /.docker/entrypoint.sh
 
-# ENTRYPOINT ["/entrypoint.sh"]
-# CMD ["apache2-foreground"]
-CMD ["sh", "-c", "cron && apache2-foreground"]
+ENTRYPOINT ["/.docker/entrypoint.sh", "/.docker/grav_defaults/user/"]
