@@ -1,0 +1,14 @@
+state: enabled
+email: maintainer@example.com
+fullname: maintainer
+language: en
+content_editor: default
+twofa_enabled: false
+twofa_secret: H5MXAVCTKL2J2X734TW7CBUU5UF3IOWA
+groups:
+  - maintainer
+avatar: {  }
+hashed_password: $2y$10$kXq4MXf4.WxPKWSv1XYdP.H9ROwlu06YSdbu0S6f/CuEAJl7K3RJ6
+access:
+  site:
+    login: true

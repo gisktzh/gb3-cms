@@ -10,15 +10,9 @@ services:
     volumes:
         # Accounts
       - type: bind
-        source: ./data/user/accounts/admin.yaml
-        target: /var/www/html/user/accounts/admin.yaml
-      - type: bind
-        source: ./data/user/accounts/writer.yaml
-        target: /var/www/html/user/accounts/writer.yaml
+        source: ./data/user/accounts
+        target: /var/www/html/user/accounts
         # Blueprints
-      - type: bind
-        source: ./data/user/blueprints/pages
-        target: /var/www/html/user/blueprints/pages
       - type: bind
         source: ./data/user/blueprints/flex-objects
         target: /var/www/html/user/blueprints/flex-objects
@@ -42,9 +36,6 @@ services:
         source: ./data/user/plugins/topics
         target: /var/www/html/user/plugins/topics
         # Theme - Templates
-      - type: bind
-        source: ./data/user/themes/quark/templates/discovermaps.html.twig
-        target: /var/www/html/user/themes/quark/templates/discovermaps.html.twig
       - type: bind
         source: ./data/user/themes/quark/templates/discovermaps.json.twig
         target: /var/www/html/user/themes/quark/templates/discovermaps.json.twig
