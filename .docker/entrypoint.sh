@@ -11,9 +11,10 @@ DEFAULT_FILES_LOCATION="$1"
 # - [0] is the default file, relative to DEFAULT_FILES_LOCATION
 # - [1] is the target directory to where the file should be moved, relative to DEFAULT_GRAV_DIR
 DEFAULT_FILES=(
-  "pages/01.discover-maps/discover-maps.md;pages/01.discover-maps"
   "accounts/admin.yaml;accounts"
+  "accounts/maintainer.yaml;accounts"
   "accounts/writer.yaml;accounts"
+  "data/flex-objects/topics.json;data/flex-objects"
 )
 
 cat << "EOF"
