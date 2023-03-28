@@ -82,4 +82,4 @@ COPY data/user/data /.docker/grav_defaults/user/data
 COPY .docker/entrypoint.sh /.docker/entrypoint.sh
 RUN chmod -R 777 /.docker
 
-ENTRYPOINT ["bash", "-c", "/.docker/entrypoint.sh", "/.docker/grav_defaults/user/"]
+ENTRYPOINT ["bash", "-c", "/.docker/entrypoint.sh /.docker/grav_defaults/user/"]
