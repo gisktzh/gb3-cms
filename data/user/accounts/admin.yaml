@@ -2,10 +2,13 @@ state: enabled
 email: admin@example.com
 fullname: admin
 title: Administrator
+hashed_password: ***REMOVED***
+language: en
+content_editor: default
+avatar: {  }
 access:
+  site:
+    login: true
   admin:
     login: true
     super: true
-  site:
-    login: true
-hashed_password: ***REMOVED***
