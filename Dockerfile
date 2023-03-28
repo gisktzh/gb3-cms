@@ -65,19 +65,20 @@ RUN curl -o grav-admin.zip -SL https://getgrav.org/download/core/grav-admin/${GR
 # Create cron job for Grav maintenance scripts
 RUN (crontab -l; echo "* * * * * cd /var/www/html;/usr/local/bin/php bin/grav scheduler 1>> /dev/null 2>&1") | crontab -
 
-# Copy custom data
-COPY ./data /var/www/html
+# Copy custom data and configs
+COPY --chown=www-data:www-data data /var/www/html
+
+# Install CORS plugin
+WORKDIR /var/www/html
+RUN bin/gpm install CORS
 
 # Return to root user
 USER root
 
-RUN chown -R www-data:www-data /var/www
-
-
 # Copy folders to temporary folder to setup default creation in entrypoint
-RUN  mkdir -p /.docker/grav_defaults
-COPY ./data/user/accounts /.docker/grav_defaults/user/accounts
-COPY ./data/user/pages /.docker/grav_defaults/user/pages
+RUN mkdir -p /.docker/grav_defaults
+COPY data/user/accounts /.docker/grav_defaults/user/accounts
+COPY data/user/data /.docker/grav_defaults/user/data
 COPY .docker/entrypoint.sh /.docker/entrypoint.sh
 
 ENTRYPOINT ["/.docker/entrypoint.sh", "/.docker/grav_defaults/user/"]

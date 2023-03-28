@@ -4,28 +4,41 @@ volumes:
 services:
   grav:
     build: ./
-    image: gb3-grav-cms:latest
+    image: gb3-grav-cms:compose
     ports:
       - 8080:80
     volumes:
+        # Accounts
       - type: bind
-        source: ./data/user/accounts/admin.yaml
-        target: /var/www/html/user/accounts/admin.yaml
+        source: ./data/user/accounts
+        target: /var/www/html/user/accounts
+        # Blueprints
       - type: bind
-        source: ./data/user/accounts/writer.yaml
-        target: /var/www/html/user/accounts/writer.yaml
-      - type: bind
-        source: ./data/user/blueprints/pages
-        target: /var/www/html/user/blueprints/pages
+        source: ./data/user/blueprints/flex-objects
+        target: /var/www/html/user/blueprints/flex-objects
+        # Config
       - type: bind
         source: ./data/user/config/groups.yaml
         target: /var/www/html/user/config/groups.yaml
       - type: bind
+        source: ./data/user/config/plugins/flex-objects.yaml
+        target: /var/www/html/user/config/plugins/flex-objects.yaml
+        # Data - Flex-Objects
+      - type: bind
+        source: ./data/user/data/flex-objects
+        target: /var/www/html/user/data/flex-objects
+        # Pages
+      - type: bind
         source: ./data/user/pages
         target: /var/www/html/user/pages
+        # Plugins - Topic
       - type: bind
-        source: ./data/user/themes/quark/templates
-        target: /var/www/html/user/themes/quark/templates
+        source: ./data/user/plugins/topics
+        target: /var/www/html/user/plugins/topics
+        # Theme - Templates
+      - type: bind
+        source: ./data/user/themes/quark/templates/discovermaps.json.twig
+        target: /var/www/html/user/themes/quark/templates/discovermaps.json.twig
 
       - type: volume
         source: grav-data
