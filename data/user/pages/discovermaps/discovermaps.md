@@ -5,8 +5,7 @@ content:
     items: '@self.children'
     order:
         by: header.from_date
-    dir: desc
-    child_type: discover-maps-item
+        dir: desc
 permissions: {  }
 ---
 

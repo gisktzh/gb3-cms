@@ -3,8 +3,6 @@ email: maintainer@example.com
 fullname: maintainer
 language: en
 content_editor: default
-twofa_enabled: false
-twofa_secret: H5MXAVCTKL2J2X734TW7CBUU5UF3IOWA
 groups:
   - maintainer
 avatar: {  }
