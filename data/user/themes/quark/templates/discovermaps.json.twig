@@ -2,10 +2,10 @@
 {% set discovermaps = flex.directory('discovermaps') %}
 {% set collection = discovermaps.getCollection() %}
 
-{% set current_month = 'today'|date('Ym') %}
+{% set current_month = 'today'|date('Ymd') %}
 {% set active_items = collection
     |map(active_item_entry => active_item_entry.header)
-    |filter(active_item => (active_item.from_date|date('Ym') <= current_month and active_item.to_date|date('Ym') >= current_month)) %}
+    |filter(active_item => (active_item.from_date|date('Ymd') <= current_month and active_item.to_date|date('Ymd') >= current_month)) %}
 
 {"discover-maps":[
 {% for active_item in active_items %}
