@@ -81,4 +81,4 @@ COPY data/user/accounts /.docker/grav_defaults/user/accounts
 COPY data/user/data /.docker/grav_defaults/user/data
 COPY .docker/entrypoint.sh /.docker/entrypoint.sh
 
-ENTRYPOINT ["/.docker/entrypoint.sh", "/.docker/grav_defaults/user/"]
+ENTRYPOINT ["bash", "-c", "/.docker/entrypoint.sh", "/.docker/grav_defaults/user/"]
