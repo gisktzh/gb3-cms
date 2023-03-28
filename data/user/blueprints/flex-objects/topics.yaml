@@ -98,6 +98,9 @@ config:
           class: 'Grav\Framework\File\Formatter\JsonFormatter'
         # JSON file where all the objects will be stored
         folder: user-data://flex-objects/topics.json
+    ordering:
+      published: ASC
+      topic_id: ASC
     search:
       # Search options
       options:

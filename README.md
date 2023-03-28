@@ -53,6 +53,8 @@ The deployment takes two bind mounts to persist user data:
 
 * `/var/www/html/user/data`: Persists the actual user data content
 * `/var/www/html/user/accounts`: Persists account data
+* `/var/www/html/assets`: Persists uploaded files and other assets
+* `/var/www/html/backup`: Persists the backup data
 
 In order to still provide defaults, the Dockerfile uses an entrypoint script. The entrypoint script has a list of files
 that are checked on each system boot. If they exist in the mounted directory, it either means that the app has been

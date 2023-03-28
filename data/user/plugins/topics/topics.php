@@ -49,6 +49,9 @@ class TopicsPlugin extends Plugin
         ]);
     }
 
+    /**
+     * Returns all available and published (published === true) topics as an array
+     */
     public static function topics(): array
     {
       /** @var Grav */

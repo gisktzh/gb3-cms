@@ -5,8 +5,6 @@ title: Administrator
 hashed_password: ***REMOVED***
 language: en
 content_editor: default
-twofa_enabled: false
-twofa_secret: ABDJGKCOO5LHWBBRRU554R7ZYHNKWY2E
 avatar: {  }
 access:
   site:
