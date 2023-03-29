@@ -74,15 +74,37 @@ RUN bin/gpm install CORS
 # Return to root user
 USER root
 
-# Copy custom data and configs
+# Copy Grav system folders
+COPY --chown=www-data:www-data data/user/plugins /var/www/html/user/plugins
+COPY --chown=www-data:www-data data/user/blueprints /var/www/html/user/blueprints
+COPY --chown=www-data:www-data data/user/config /var/www/html/user/config
+COPY --chown=www-data:www-data data/user/pages /var/www/html/user/pages
+COPY --chown=www-data:www-data data/user/themes /var/www/html/user/themes
+
+# Copy folders to temporary folder to setup default creation in entrypoint
+RUN mkdir -p /.docker/grav_defaults
+COPY data/user/accounts /.docker/grav_defaults/user/accounts
+COPY data/user/data /.docker/grav_defaults/user/data
+COPY .docker/entrypoint.sh /.docker/entrypoint.sh
+RUN chmod -R 777 /.docker
+
+# Create rootdirectory where our symlinked data shall reside
 RUN mkdir /cms_data
 
-# move user folder
-RUN mkdir /cms_data/user && chown www-data:www-data /cms_data/user && cp -R /var/www/html/user /cms_data/user
-# Copy custom data and configs
-#COPY --chown=www-data:www-data data/user /cms_data/user
-RUN ln -s /cms_data/user /var/www/html/user
+# Move folders that should be backupped to rootdirectory and set up symlinks
+RUN mkdir /cms_data/user &&  \
+    chown www-data:www-data /cms_data/user &&  \
+    mv /var/www/html/user /cms_data &&  \
+    ln -s /cms_data/user /var/www/html
 
+RUN mkdir /cms_data/assets &&  \
+    chown www-data:www-data /cms_data/assets &&  \
+    mv /var/www/html/assets /cms_data &&  \
+    ln -s /cms_data/assets /var/www/html
 
-CMD ["sh", "-c", "cron && apache2-foreground"]
-#ENTRYPOINT ["bash", "-c", "/.docker/entrypoint.sh /.docker/grav_defaults/user/"]
+RUN mkdir /cms_data/backup &&  \
+    chown www-data:www-data /cms_data/backup &&  \
+    mv /var/www/html/backup /cms_data &&  \
+    ln -s /cms_data/backup /var/www/html
+
+ENTRYPOINT ["bash", "-c", "/.docker/entrypoint.sh /.docker/grav_defaults/user/"]
