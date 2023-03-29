@@ -1,4 +1,5 @@
 #!/bin/bash
+cron && apache2-foreground
 
 # Default grav cms directory
 DEFAULT_GRAV_DIR="/var/www/html/user"
