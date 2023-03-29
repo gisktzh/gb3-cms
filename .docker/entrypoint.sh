@@ -1,8 +1,7 @@
 #!/bin/bash
-cron && apache2-foreground
 
 # Default grav cms directory
-DEFAULT_GRAV_DIR="/var/www/html/user"
+DEFAULT_GRAV_DIR="/cms_data/user"
 
 # set default files location to first argument of invocation
 DEFAULT_FILES_LOCATION="$1"
@@ -57,6 +56,8 @@ for file in "${DEFAULT_FILES[@]}"; do
     echo "==> Copying: $DEFAULT_FILES_LOCATION${current_file[0]}" "${current_file[1]}"
     [ -d "${current_file[1]}" ] || echo "==> Creating directory which is missing..." && mkdir "${current_file[1]}"
     cp "$DEFAULT_FILES_LOCATION${current_file[0]}" "${current_file[1]}"
+    echo "==> Setting access rights..."
+    chown -R www-data:www-data "${current_file[1]}"
     echo "==> Copied file!"
   else
     echo "==> File exists, continuing..."
@@ -67,7 +68,7 @@ done
 
 # Set ownership once again to overwrite root user when using bind mounts
 echo "Running CHMOD on user directory again..."
-chown -R www-data:www-data /var/www/html/user
+chown -R www-data:www-data "$DEFAULT_GRAV_DIR"
 
 # start the actual application
 echo -e "We are good to go, booting GravCMS now! (つ -‘ _ ‘- )つ\n"
