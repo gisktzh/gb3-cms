@@ -5,6 +5,10 @@ variables:
   containerRegistry: '***REMOVED***'
   dockerfilePath: '**/Dockerfile'
   tag: 'latest' # '$(Build.BuildId)'
+  containerApp: 'gb3-grav-cms'
+  resourceGroup: '***REMOVED***'
+  azureSubscription: '***REMOVED***'
+  azureResourceManagerServiceConnection: '***REMOVED***'
 
   # Agent VM image name
   vmImageName: 'ubuntu-latest'
