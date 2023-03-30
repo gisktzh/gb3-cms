@@ -1,0 +1,13 @@
+volumes:
+  grav-data:
+
+services:
+  grav:
+    build: ./
+    image: gb3-grav-cms:compose
+    ports:
+      - 8080:80
+    volumes:
+      - type: volume
+        source: grav-data
+        target: /cms_data
