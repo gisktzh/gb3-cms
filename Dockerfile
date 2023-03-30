@@ -74,6 +74,9 @@ RUN bin/gpm install CORS
 # Return to root user
 USER root
 
+# Setup symlinks and copy of files
+# Because GravCMS mixes up data and system files, we cannot just mount a specific directory.
+
 # Copy Grav system folders
 COPY --chown=www-data:www-data data/user/plugins /var/www/html/user/plugins
 COPY --chown=www-data:www-data data/user/blueprints /var/www/html/user/blueprints
@@ -92,10 +95,15 @@ RUN chmod -R 777 /.docker
 RUN mkdir /cms_data
 
 # Move folders that should be backupped to rootdirectory and set up symlinks
-RUN mkdir /cms_data/user &&  \
-    chown www-data:www-data /cms_data/user &&  \
-    mv /var/www/html/user /cms_data &&  \
-    ln -s /cms_data/user /var/www/html
+RUN mkdir -p /cms_data/user/data &&  \
+    chown www-data:www-data /cms_data/user/data &&  \
+    mv /var/www/html/user/data /cms_data/user &&  \
+    ln -s /cms_data/user/data /var/www/html/user
+
+RUN mkdir -p /cms_data/user/accounts &&  \
+    chown www-data:www-data /cms_data/user/accounts &&  \
+    mv /var/www/html/user/accounts /cms_data/user &&  \
+    ln -s /cms_data/user/accounts /var/www/html/user
 
 RUN mkdir /cms_data/assets &&  \
     chown www-data:www-data /cms_data/assets &&  \
