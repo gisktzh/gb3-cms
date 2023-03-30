@@ -65,8 +65,7 @@ RUN curl -o grav-admin.zip -SL https://getgrav.org/download/core/grav-admin/${GR
 # Create cron job for Grav maintenance scripts
 RUN (crontab -l; echo "* * * * * cd /var/www/html;/usr/local/bin/php bin/grav scheduler 1>> /dev/null 2>&1") | crontab -
 
-# Copy custom data and configs
-COPY --chown=www-data:www-data data /var/www/html
+
 
 # Install CORS plugin
 WORKDIR /var/www/html
@@ -75,11 +74,48 @@ RUN bin/gpm install CORS
 # Return to root user
 USER root
 
+# File copying
 # Copy folders to temporary folder to setup default creation in entrypoint
 RUN mkdir -p /.docker/grav_defaults
-COPY data/user/accounts /.docker/grav_defaults/user/accounts
-COPY data/user/data /.docker/grav_defaults/user/data
+COPY data/accounts /.docker/grav_defaults/user/accounts
+COPY data/data /.docker/grav_defaults/user/data
 COPY .docker/entrypoint.sh /.docker/entrypoint.sh
 RUN chmod -R 777 /.docker
+
+# Copy Grav system folders
+# These are all the folders that are NOT (or should not be) controlled at runtime
+COPY --chown=www-data:www-data system /var/www/html/user
+
+
+# Setup symlinks for all directories that contain data controlled at runtime (i.e. our "database")
+# Create rootdirectory where our symlinked data shall reside
+RUN mkdir /cms_data
+
+# Move folders that should be backupped to rootdirectory and set up symlinks
+RUN mkdir -p /cms_data/user/data &&  \
+    chown www-data:www-data /cms_data/user/data &&  \
+    mv /var/www/html/user/data /cms_data/user &&  \
+    ln -s /cms_data/user/data /var/www/html/user
+
+RUN mkdir -p /cms_data/user/accounts &&  \
+    chown www-data:www-data /cms_data/user/accounts &&  \
+    mv /var/www/html/user/accounts /cms_data/user &&  \
+    ln -s /cms_data/user/accounts /var/www/html/user
+
+# pages is not actually needed, but might be in the future - so we do not forget
+RUN mkdir -p /cms_data/user/pages &&  \
+    chown www-data:www-data /cms_data/user/pages &&  \
+    mv /var/www/html/user/pages /cms_data/user &&  \
+    ln -s /cms_data/user/pages /var/www/html/user
+
+RUN mkdir /cms_data/assets &&  \
+    chown www-data:www-data /cms_data/assets &&  \
+    mv /var/www/html/assets /cms_data &&  \
+    ln -s /cms_data/assets /var/www/html
+
+RUN mkdir /cms_data/backup &&  \
+    chown www-data:www-data /cms_data/backup &&  \
+    mv /var/www/html/backup /cms_data &&  \
+    ln -s /cms_data/backup /var/www/html
 
 ENTRYPOINT ["bash", "-c", "/.docker/entrypoint.sh /.docker/grav_defaults/user/"]
