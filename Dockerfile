@@ -74,23 +74,20 @@ RUN bin/gpm install CORS
 # Return to root user
 USER root
 
-# Setup symlinks and copy of files
-# Because GravCMS mixes up data and system files, we cannot just mount a specific directory.
-
-# Copy Grav system folders
-COPY --chown=www-data:www-data data/user/plugins /var/www/html/user/plugins
-COPY --chown=www-data:www-data data/user/blueprints /var/www/html/user/blueprints
-COPY --chown=www-data:www-data data/user/config /var/www/html/user/config
-COPY --chown=www-data:www-data data/user/pages /var/www/html/user/pages
-COPY --chown=www-data:www-data data/user/themes /var/www/html/user/themes
-
+# File copying
 # Copy folders to temporary folder to setup default creation in entrypoint
 RUN mkdir -p /.docker/grav_defaults
-COPY data/user/accounts /.docker/grav_defaults/user/accounts
-COPY data/user/data /.docker/grav_defaults/user/data
+COPY data/accounts /.docker/grav_defaults/user/accounts
+COPY data/data /.docker/grav_defaults/user/data
 COPY .docker/entrypoint.sh /.docker/entrypoint.sh
 RUN chmod -R 777 /.docker
 
+# Copy Grav system folders
+# These are all the folders that are NOT (or should not be) controlled at runtime
+COPY --chown=www-data:www-data system /var/www/html/user
+
+
+# Setup symlinks for all directories that contain data controlled at runtime (i.e. our "database")
 # Create rootdirectory where our symlinked data shall reside
 RUN mkdir /cms_data
 
@@ -104,6 +101,12 @@ RUN mkdir -p /cms_data/user/accounts &&  \
     chown www-data:www-data /cms_data/user/accounts &&  \
     mv /var/www/html/user/accounts /cms_data/user &&  \
     ln -s /cms_data/user/accounts /var/www/html/user
+
+# pages is not actually needed, but might be in the future - so we do not forget
+RUN mkdir -p /cms_data/user/pages &&  \
+    chown www-data:www-data /cms_data/user/pages &&  \
+    mv /var/www/html/user/pages /cms_data/user &&  \
+    ln -s /cms_data/user/pages /var/www/html/user
 
 RUN mkdir /cms_data/assets &&  \
     chown www-data:www-data /cms_data/assets &&  \
