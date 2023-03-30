@@ -10,34 +10,34 @@ services:
     volumes:
         # Accounts
       - type: bind
-        source: ./data/user/accounts
-        target: /var/www/html/user/accounts
+        source: ./data/accounts
+        target: /cms_data/user/accounts
         # Blueprints
       - type: bind
-        source: ./data/user/blueprints/flex-objects
+        source: ./system/blueprints/flex-objects
         target: /var/www/html/user/blueprints/flex-objects
         # Config
       - type: bind
-        source: ./data/user/config/groups.yaml
+        source: ./system/config/groups.yaml
         target: /var/www/html/user/config/groups.yaml
       - type: bind
-        source: ./data/user/config/plugins/flex-objects.yaml
+        source: ./system/config/plugins/flex-objects.yaml
         target: /var/www/html/user/config/plugins/flex-objects.yaml
         # Data - Flex-Objects
       - type: bind
-        source: ./data/user/data/flex-objects
-        target: /var/www/html/user/data/flex-objects
+        source: ./data/data/flex-objects
+        target: /cms_data/user/data/flex-objects
         # Pages
       - type: bind
-        source: ./data/user/pages
-        target: /var/www/html/user/pages
+        source: ./data/pages
+        target: /cms_data/user/pages
         # Plugins - Topic
       - type: bind
-        source: ./data/user/plugins/topics
+        source: ./system/plugins/topics
         target: /var/www/html/user/plugins/topics
         # Theme - Templates
       - type: bind
-        source: ./data/user/themes/quark/templates/discovermaps.json.twig
+        source: ./system/themes/quark/templates/discovermaps.json.twig
         target: /var/www/html/user/themes/quark/templates/discovermaps.json.twig
 
       - type: volume
