@@ -79,6 +79,7 @@ USER root
 RUN mkdir -p /.docker/grav_defaults
 COPY data/accounts /.docker/grav_defaults/user/accounts
 COPY data/data /.docker/grav_defaults/user/data
+COPY data/pages /.docker/grav_defaults/user/pages
 COPY .docker/entrypoint.sh /.docker/entrypoint.sh
 RUN chmod -R 777 /.docker
 
