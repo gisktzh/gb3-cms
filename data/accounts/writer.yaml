@@ -1,0 +1,12 @@
+state: enabled
+email: writer@example.com
+fullname: writer
+language: de
+content_editor: default
+avatar: {  }
+groups:
+  - publisher
+hashed_password: ***REMOVED***
+access:
+  site:
+    login: true

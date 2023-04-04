@@ -1,0 +1,45 @@
+name: Azure build Docker image and push it to a container registry
+
+trigger: none
+
+resources:
+  - repo: self
+
+variables:
+  - template: 'templates/variables.yaml'
+
+stages:
+  - stage: Build
+    displayName: Build and push stage
+    jobs:
+      - job: Build
+        displayName: Build
+        pool:
+          vmImage: $(vmImageName)
+        steps:
+          - task: Docker@2
+            displayName: Build and push an image to container registry
+            inputs:
+              command: buildAndPush
+              repository: $(imageRepository)
+              dockerfile: $(dockerfilePath)
+              containerRegistry: $(dockerRegistryServiceConnection)
+              tags: |
+                $(tag)
+          - task: AzureContainerAppsRC@1
+            displayName: Create/update container app and use the image from the container registry
+            inputs:
+              azureSubscription: $(azureResourceManagerServiceConnection)
+              containerAppName: $(containerApp)
+              resourceGroup: $(resourceGroup)
+              imageToDeploy: $(containerRegistry)/$(imageRepository):$(tag)
+              location: 'Switzerland North'
+              disableTelemetry: true
+              yamlConfigPath: .azure-pipelines/gb3-grav-cms-container-app.yaml
+          - task: AzureCLI@2
+            displayName: Update the container app revision using the build id.
+            inputs:
+              azureSubscription: $(azureResourceManagerServiceConnection)
+              scriptType: 'pscore'
+              scriptLocation: 'inlineScript'
+              inlineScript: 'az containerapp update -n $(containerApp) -g $(resourceGroup) --set-env-vars "build=$(Build.BuildId)"'

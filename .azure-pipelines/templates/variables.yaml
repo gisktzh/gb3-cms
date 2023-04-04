@@ -1,0 +1,14 @@
+variables:
+  # Container registry service connection established during pipeline creation
+  dockerRegistryServiceConnection: 'gb3connection'
+  imageRepository: 'gb3-grav-cms'
+  containerRegistry: 'gb3registry.azurecr.io'
+  dockerfilePath: '**/Dockerfile'
+  tag: 'latest' # '$(Build.BuildId)'
+  containerApp: 'gb3-grav-cms'
+  resourceGroup: 'rg-chn-gb3-services'
+  azureSubscription: 'sub-ebp-gb3-csp'
+  azureResourceManagerServiceConnection: 'gb3-azure-rm-connection'
+
+  # Agent VM image name
+  vmImageName: 'ubuntu-latest'
