@@ -1,0 +1,972 @@
+{
+  "4b013a3462f4fb76ef7f4643dd05173e": {
+    "published": true,
+    "topic_id": "AVfarbigZH",
+    "topic_name": "Amtliche Vermessung in Farbe"
+  },
+  "8c72fb1ef144712ec70566ce22e5c6df": {
+    "published": true,
+    "topic_id": "AVswZH",
+    "topic_name": "Amtliche Vermessung schwarz/weiss"
+  },
+  "d4a0263f6e2a38cf841f22bfa79d1cdc": {
+    "published": true,
+    "topic_id": "Lageklassen2003ZH",
+    "topic_name": "Lageklassen 2003"
+  },
+  "ad362e36d562b6d0178e437229810c14": {
+    "published": true,
+    "topic_id": "Lageklassen2004ZH",
+    "topic_name": "Lageklassen 2004"
+  },
+  "9ce9919457fd778970964f8d3d3f2d9a": {
+    "published": true,
+    "topic_id": "Lageklassen2009ZH",
+    "topic_name": "Lageklassen 2009"
+  },
+  "77fe1ea26c56ea0a424b734d0ad8f888": {
+    "published": true,
+    "topic_id": "Lageklassen2011ZH",
+    "topic_name": "Lageklassen 2011"
+  },
+  "8a4b606b48b8fc3a9c349d0574c1e738": {
+    "published": true,
+    "topic_id": "Lageklassen2013ZH",
+    "topic_name": "Lageklassen 2013"
+  },
+  "affa7c708510c2c876e79e170bf5786e": {
+    "published": true,
+    "topic_id": "Lageklassen2015ZH",
+    "topic_name": "Lageklassen 2015"
+  },
+  "10da3cf56e4a4398716b830be409bdf7": {
+    "published": true,
+    "topic_id": "AWAStaoZH",
+    "topic_name": "AWA-Standorte"
+  },
+  "49ced99a6d75f1fd15a31f6dcf6cf769": {
+    "published": true,
+    "topic_id": "Lageklassen2017ZH",
+    "topic_name": "Lageklassen 2017"
+  },
+  "ad0121ddc1037210fdb91fe96d9d99e3": {
+    "published": true,
+    "topic_id": "Lageklassen2019ZH",
+    "topic_name": "Lageklassen 2019"
+  },
+  "80d2b7c2f2070ef471d3086efad86256": {
+    "published": true,
+    "topic_id": "ALAwwwZH",
+    "topic_name": "Meliorationskataster"
+  },
+  "629d258125b3e5bfd92280f1c31dc9df": {
+    "published": true,
+    "topic_id": "SportanlagenZH",
+    "topic_name": "Sportanlagen"
+  },
+  "636f38e30d3a80ebd47dc0b59fca743c": {
+    "published": true,
+    "topic_id": "AreIVHBZH",
+    "topic_name": "Stand Umsetzung Harmonisierung der Baubegriffe in den Gemeinden (IVHB)"
+  },
+  "dfe617ae38bbf3ef16efe89e67b93301": {
+    "published": true,
+    "topic_id": "AwaWohnbauFoerdZH",
+    "topic_name": "Wohnbauten gemeinn\u00fctziger Bautr\u00e4ger"
+  },
+  "a09c8f381fc18c165973728964b74f85": {
+    "published": true,
+    "topic_id": "ZSOZH",
+    "topic_name": "Zivilschutzorganisation"
+  },
+  "d2e025aeed010e357b7e563dd9645db1": {
+    "published": true,
+    "topic_id": "GVZFeuerwehrZusZH",
+    "topic_name": "Zusammenarbeit Feuerwehr"
+  },
+  "a2568dd37d36d4aabb2f8a99bca827a4": {
+    "published": true,
+    "topic_id": "GVZFeuerwehrZH",
+    "topic_name": "Zust\u00e4ndigkeit Feuerwehr"
+  },
+  "174423fa3d25c31e562a324422a5778e": {
+    "published": true,
+    "topic_id": "BoKaZH",
+    "topic_name": "Bodenkarte der Landwirtschaftsfl\u00e4chen"
+  },
+  "81061dcd792615bd9ca17dc97a4fb135": {
+    "published": true,
+    "topic_id": "FaBoFFFZH",
+    "topic_name": "Fruchtfolgefl\u00e4chen (FFF)"
+  },
+  "46e09ef76b2d462c46f64b90704fef79": {
+    "published": true,
+    "topic_id": "FaboAnthroposolZH",
+    "topic_name": "Hinweiskarte anthropogene B\u00f6den"
+  },
+  "434dea7bab8b9eb130a7a2510c7abb23": {
+    "published": true,
+    "topic_id": "AwelKBSZH",
+    "topic_name": "Kataster der belasteten Standorte (KbS)"
+  },
+  "7da45f378d4a9a00dc771888819a3873": {
+    "published": true,
+    "topic_id": "NEKZH",
+    "topic_name": "Landwirtschaftliche Nutzungseignungskarte"
+  },
+  "a7d2e3ca77120066fef19cc852eb63a4": {
+    "published": true,
+    "topic_id": "FaBoPBV2ZH",
+    "topic_name": "Pr\u00fcfperimeter f\u00fcr Bodenverschiebungen (PBV)"
+  },
+  "63e3a5dd9bc2570d01fcabb2e4f8ade4": {
+    "published": true,
+    "topic_id": "FaBoPBVZH",
+    "topic_name": "Verfahren bei Hinweisen auf Schadstoffbelastungen des Erdreichs"
+  },
+  "28487844d1438d7676809f4828c04a95": {
+    "published": true,
+    "topic_id": "WaldVKZH",
+    "topic_name": "Vegetationskundliche Kartierung der W\u00e4lder im Kanton Z\u00fcrich"
+  },
+  "c3f3523d43f470f17864fb5a190ecd19": {
+    "published": true,
+    "topic_id": "AwelNeozoenZH",
+    "topic_name": "Aquatische Neozoen"
+  },
+  "cd58040648cb72de7f1217ab0031891c": {
+    "published": true,
+    "topic_id": "VetBienenstaendewwwZH",
+    "topic_name": "Bienenst\u00e4nde"
+  },
+  "c7bea37b66598b61ed0f397e9bba8873": {
+    "published": true,
+    "topic_id": "AlaFeuerbrandZH",
+    "topic_name": "Feuerbrand \u2013 Gebiete geringer Pr\u00e4valenz"
+  },
+  "779f617a8bfa157de7748a1bf4f9c513": {
+    "published": true,
+    "topic_id": "AlnJagdreviereZH",
+    "topic_name": "Jagdreviere"
+  },
+  "75a52ef2367ba0d0f6d22d25a1ad59da": {
+    "published": true,
+    "topic_id": "FNSLRPZH",
+    "topic_name": "Lebensraum-Potenziale (Feuchtgebiete, Mager-, Trockenwiesen)"
+  },
+  "8f7720eaab2fa750fae249852db28ae0": {
+    "published": true,
+    "topic_id": "FnsLRKZH",
+    "topic_name": "Lebensraumkartierung"
+  },
+  "a34ddc19f5b00571ac0a6fbeed25c543": {
+    "published": true,
+    "topic_id": "AlnNDokZH",
+    "topic_name": "Naturschutzdokumentation (NDOK)"
+  },
+  "7cb3160e47e27d8fd7c6644b61af0675": {
+    "published": true,
+    "topic_id": "Neo2publicZH",
+    "topic_name": "Neophytenverbreitung"
+  },
+  "c85a2ad5c2302f8b1110cff61f5ec66f": {
+    "published": true,
+    "topic_id": "FnsLWZH",
+    "topic_name": "Objekte Lichte W\u00e4lder"
+  },
+  "8f3ecd59fa5e91a00aec70bb37c7ab40": {
+    "published": true,
+    "topic_id": "FnsPflegeZH",
+    "topic_name": "Pflegeplan Naturschutz-Teilfl\u00e4chen"
+  },
+  "b8cecc64c1fb2a4ef9593bdc1988ad77": {
+    "published": true,
+    "topic_id": "WaldSchutzwaldZH",
+    "topic_name": "Schutzwald"
+  },
+  "ec76fe2f386d7ce8e6a4ee9212a86980": {
+    "published": true,
+    "topic_id": "WaldEGZH",
+    "topic_name": "Waldeigentumskategorien, Forstkreise und Forstreviere"
+  },
+  "80ce9694b6e7a97776a9d939835de87f": {
+    "published": true,
+    "topic_id": "WaldWEPZH",
+    "topic_name": "Waldentwicklungsplan Kanton Z\u00fcrich 2010: Besondere Ziele"
+  },
+  "022300e5cd7fde6f453940f7497814c1": {
+    "published": true,
+    "topic_id": "WaldWEP2ZH",
+    "topic_name": "Waldentwicklungsplan Kanton Z\u00fcrich 2010: Planungsgrundlagen"
+  },
+  "360fdddd37fe73e896fa7e4213c8cb14": {
+    "published": true,
+    "topic_id": "WaldWEP3ZH",
+    "topic_name": "Waldentwicklungsplan Kanton Z\u00fcrich 2010: Waldfunktionen"
+  },
+  "8ac07c167325c5a7a20977d096037c69": {
+    "published": true,
+    "topic_id": "WaldWEP2011stadtZH",
+    "topic_name": "Waldentwicklungsplan Stadt Z\u00fcrich 2011: Besondere Ziele"
+  },
+  "b9d1f08a64c324b997e247471cc4ad92": {
+    "published": true,
+    "topic_id": "WaldWEP3stadt2011ZH",
+    "topic_name": "Waldentwicklungsplan Stadt Z\u00fcrich 2011: Waldfunktionen"
+  },
+  "bd488ade571af0e649fc7dbe1390a584": {
+    "published": true,
+    "topic_id": "WaldWNBZH",
+    "topic_name": "Waldstandorte von naturkundlicher Bedeutung (WNB)"
+  },
+  "bab378649bc53d87f2c00ae17373329d": {
+    "published": true,
+    "topic_id": "FuJ2ZH",
+    "topic_name": "Wildtierkorridore (F+J)"
+  },
+  "0d25e17df478e5b9900b49bbce31da22": {
+    "published": true,
+    "topic_id": "TBAWanderwegeZH",
+    "topic_name": "Wanderwege"
+  },
+  "36fb7c7245d145c43f4589591c2104d6": {
+    "published": true,
+    "topic_id": "WaldAppZH",
+    "topic_name": "Z\u00fcriwald"
+  },
+  "4ecf36071c677075dee3a8edd7812303": {
+    "published": true,
+    "topic_id": "GeologGeomorphInvZH",
+    "topic_name": "Geologisch-geomorphologisches Inventar"
+  },
+  "fdca9583bc6529c49cf5abcfea9fc8e2": {
+    "published": true,
+    "topic_id": "AREGeomorphologieZH",
+    "topic_name": "Geomorphologische Landschaften des Kantons Z\u00fcrich"
+  },
+  "0851c2f74be107044369422b4de11361": {
+    "published": true,
+    "topic_id": "AwelGWFelsZH",
+    "topic_name": "Modellierte Felsoberfl\u00e4che"
+  },
+  "b3a0ee1abc4d7389d5b2faa2dba94ea2": {
+    "published": true,
+    "topic_id": "BASISKARTEZH",
+    "topic_name": "Landeskarten, \u00dcbersichtsplan"
+  },
+  "0d893ccc2493ba5142b873d3d7d6b66f": {
+    "published": true,
+    "topic_id": "UPZH",
+    "topic_name": "\u00dcbersichtsplan"
+  },
+  "2d09cd6f4d9e30af63921a4872e4f68b": {
+    "published": true,
+    "topic_id": "WildkarteZH",
+    "topic_name": "Historische Karte J. Wild (~1850)"
+  },
+  "780db3adaec89cd376629459947d96f8": {
+    "published": true,
+    "topic_id": "Siegfried1880ZH",
+    "topic_name": "Siegfriedkarte 1880, 1:25'000"
+  },
+  "2cd9f8da52ec215671244ec6509f98de": {
+    "published": true,
+    "topic_id": "Siegfried1930ZH",
+    "topic_name": "Siegfriedkarte 1930, 1:25'000"
+  },
+  "ef2f51fb372e97f6b0ec9b86bf6cad17": {
+    "published": true,
+    "topic_id": "LK25altZH",
+    "topic_name": "Alte Landeskarte 1956-65, 1:25'000"
+  },
+  "e531dafc9586b49a8be2f673caff018b": {
+    "published": true,
+    "topic_id": "DufourErstZH",
+    "topic_name": "Dufourkarte Erstausgabe 1845 - 1865"
+  },
+  "d30e18d7a50ce2f6018545c0f45a86b8": {
+    "published": true,
+    "topic_id": "DufourLetztZH",
+    "topic_name": "Dufourkarte Letztausgabe 1939"
+  },
+  "c2038aa0a3fc4cbe4d199312ca2932e0": {
+    "published": true,
+    "topic_id": "HistGewKarteZH",
+    "topic_name": "Historische Gew\u00e4sserkarte des Kantons Z\u00fcrich"
+  },
+  "71f02c7cd8b40e547758c7533092a04e": {
+    "published": true,
+    "topic_id": "GygerMurerZH",
+    "topic_name": "Historische Karten"
+  },
+  "b6dea0f58009a22c9feb98c9c28fbb92": {
+    "published": true,
+    "topic_id": "ArchKulturerbeZH",
+    "topic_name": "Mein Kulturerbe"
+  },
+  "67b79457e8d7810995765bca699d6d15": {
+    "published": true,
+    "topic_id": "StaOldmapsZH",
+    "topic_name": "Staatsarchiv: Karten und Pl\u00e4ne"
+  },
+  "2dbe2f26f826b4ebcebcac4d01c78d55": {
+    "published": true,
+    "topic_id": "ToponameZH",
+    "topic_name": "Topografische Namen"
+  },
+  "1b7d89925e0054b21773457ed05a2ff1": {
+    "published": true,
+    "topic_id": "AdminZH",
+    "topic_name": "Administrative Einteilungen"
+  },
+  "2eabde8ed689996547c51c8f24a038e9": {
+    "published": true,
+    "topic_id": "FuJRevZH",
+    "topic_name": "Fischereireviere (F+J)"
+  },
+  "b68f6ac8e80f5708687669edc1cea583": {
+    "published": true,
+    "topic_id": "GemeindeGISZH",
+    "topic_name": "Gemeinde-GIS"
+  },
+  "74d5b7b629884586df6fee8b961f8e6f": {
+    "published": true,
+    "topic_id": "FNSAmphZH",
+    "topic_name": "Amphibienzugstellen"
+  },
+  "a3b2e4f6606c8a8049a386d1c710f575": {
+    "published": true,
+    "topic_id": "ArchDenkmalZH",
+    "topic_name": "Arch\u00e4ologische Zonen und Denkmalschutzobjekte"
+  },
+  "b9aa54935c72d8d07603732e68099fb6": {
+    "published": true,
+    "topic_id": "BundISOSZH",
+    "topic_name": "Bundesinventar ISOS"
+  },
+  "ff4d400e8f225ef2f515aa77ea434763": {
+    "published": true,
+    "topic_id": "BundInvZH",
+    "topic_name": "Bundesinventare"
+  },
+  "df5f6aae6869e6c5221d85c46137b712": {
+    "published": true,
+    "topic_id": "OrtsbildschutzZH",
+    "topic_name": "Inventar der schutzw\u00fcrdigen Ortsbilder von \u00fcberkommunaler Bedeutung"
+  },
+  "b18c9f35d5c706f64de3a75b5a8633eb": {
+    "published": true,
+    "topic_id": "HistVerkWegZH",
+    "topic_name": "Inventar historischer Verkehrswege der Schweiz IVS"
+  },
+  "0f19a687f227bc49f3fc8648b112f5c1": {
+    "published": true,
+    "topic_id": "ARPkilowwwZH",
+    "topic_name": "Kantonales Inventar der Landschaftsschutzobjekte"
+  },
+  "3b5ed7427d7b2213b7141e63f82a7b1f": {
+    "published": true,
+    "topic_id": "FnsInvZH",
+    "topic_name": "Natur- und Landschaftsschutzinventar 1980"
+  },
+  "c3a2c99e9f95f0bed01b2e4bccaf491b": {
+    "published": true,
+    "topic_id": "FnsNimsZH",
+    "topic_name": "Naturschutz-Infrastruktur-Management-System - NIMS"
+  },
+  "4669be8822ccb46c6d7fc6dda4ca6aee": {
+    "published": true,
+    "topic_id": "FnsSchutzanordnungenZH",
+    "topic_name": "Schutzanordnungen Natur und Landschaft"
+  },
+  "6c349075b4f5c9bf2f5b1ad4637e7371": {
+    "published": true,
+    "topic_id": "Ala4wwwZH",
+    "topic_name": "Hanglagen, Landwirtschaftliche Zonengrenzen, Liegenschaften und Bodenbedeckung"
+  },
+  "4f5b5f548c8545a3ff9d7fa5bc5d9ffb": {
+    "published": true,
+    "topic_id": "FNSOEQVZH",
+    "topic_name": "Kantonale F\u00f6rdergebiete f\u00fcr den \u00f6kologischen Ausgleich"
+  },
+  "85f287f70c7096a818f87c8719fbd904": {
+    "published": true,
+    "topic_id": "Ala3wwwZH",
+    "topic_name": "Klimaeignungskarte"
+  },
+  "540c19c2326065f3f0292caf40801110": {
+    "published": true,
+    "topic_id": "AlaLQwwwZH",
+    "topic_name": "Landschaftsqualit\u00e4t"
+  },
+  "3d18cd6290acb7ea40e87d304f08b95b": {
+    "published": true,
+    "topic_id": "ARELandschaftstypologieZH",
+    "topic_name": "Landschaftstypologie des Kantons Z\u00fcrich"
+  },
+  "981871f94141a91af06b7ba956813383": {
+    "published": true,
+    "topic_id": "AlnBewirtschaftungOeffentlichZH",
+    "topic_name": "Landwirtschaftliche Bewirtschaftung"
+  },
+  "39dfe4d8dcc8612c4fa04c5356bc626d": {
+    "published": true,
+    "topic_id": "LH10PM2015ZH",
+    "topic_name": "Feinstaub (PM10)-Immissionen 2015"
+  },
+  "cc88482ff2e7c54debe4545d83ff250d": {
+    "published": true,
+    "topic_id": "LH10PM2020ZH",
+    "topic_name": "Feinstaub (PM10)-Immissionen 2020"
+  },
+  "3d65f581eec50d504bfaf0d02b745117": {
+    "published": true,
+    "topic_id": "LH10PM2030ZH",
+    "topic_name": "Feinstaub (PM10)-Immissionen 2030"
+  },
+  "6d2e5f1417ffffe3d0b7b0062bb96de4": {
+    "published": true,
+    "topic_id": "LH25PM2015ZH",
+    "topic_name": "Feinstaub (PM2.5)-Immissionen 2015"
+  },
+  "9fd3d38ecedea276a39fafee82f913df": {
+    "published": true,
+    "topic_id": "LH25PM2020ZH",
+    "topic_name": "Feinstaub (PM2.5)-Immissionen 2020"
+  },
+  "5d0e5192c87a37c9619dc65ca9ab132a": {
+    "published": true,
+    "topic_id": "LH25PM2030ZH",
+    "topic_name": "Feinstaub (PM2.5)-Immissionen 2030"
+  },
+  "66c235a834c11f93d4827bf964af9557": {
+    "published": true,
+    "topic_id": "AwelLHHitzeSiedlungsraumZH",
+    "topic_name": "Hitze im Siedlungsraum"
+  },
+  "d61f1d06b6283c6454a10e68b49ff5d5": {
+    "published": true,
+    "topic_id": "AwelLHKlimaanalyseZH",
+    "topic_name": "Klimamodell: Klimaanalysekarte"
+  },
+  "e314a3ac5c48334ad1e9b55db0270817": {
+    "published": true,
+    "topic_id": "AwelLHKlimaszenarienZH",
+    "topic_name": "Klimamodell: Klimaszenarienkarte"
+  },
+  "6f7c8f34e34664b01911345f1227f8e5": {
+    "published": true,
+    "topic_id": "AwelLHKlimaPlanhinweisZH",
+    "topic_name": "Klimamodell: Planhinweiskarte"
+  },
+  "c4b448d5757e9209fa58ffd5bf0e4208": {
+    "published": true,
+    "topic_id": "AwelLHLichtemissionenZH",
+    "topic_name": "Lichtemissionen"
+  },
+  "4b445746f7faf9d6198e50feebfbc9d5": {
+    "published": true,
+    "topic_id": "LHNO22015ZH",
+    "topic_name": "NO2-Immissionen 2015"
+  },
+  "5316d952bfe8ed4b886d9b2c705fb330": {
+    "published": true,
+    "topic_id": "LHNO22020ZH",
+    "topic_name": "NO2-Immissionen 2020"
+  },
+  "ee38096d5204f70b839a1f1ef1583c54": {
+    "published": true,
+    "topic_id": "LHNO22030ZH",
+    "topic_name": "NO2-Immissionen 2030"
+  },
+  "f84ae5d70c1d5968d0603fbec7f6c04c": {
+    "published": true,
+    "topic_id": "LHBC2015ZH",
+    "topic_name": "Russ (BC)-Immissionen 2015"
+  },
+  "942d4d01683b58691eaa9f1dd37329b9": {
+    "published": true,
+    "topic_id": "LHBC2020ZH",
+    "topic_name": "Russ (BC)-Immissionen 2020"
+  },
+  "a28fca5bd513b85e0609f180e7dd8510": {
+    "published": true,
+    "topic_id": "LHBC2030ZH",
+    "topic_name": "Russ (BC)-Immissionen 2030"
+  },
+  "d76e695d96b382811a3ec5d607aceade": {
+    "published": true,
+    "topic_id": "AwelNISZH",
+    "topic_name": "Standorte von Sendeanlagen (Mobilfunk und Rundfunk)"
+  },
+  "b1a62ab5ecb91b1bf916c64563de5dd9": {
+    "published": true,
+    "topic_id": "TBAFALSBVBZH",
+    "topic_name": "Flugl\u00e4rm: Bauvorhaben Betrieb"
+  },
+  "63114bf40352a5e395bb44251c2b2d2f": {
+    "published": true,
+    "topic_id": "TBAFALSRPBZH",
+    "topic_name": "Flugl\u00e4rm: Raumplanung Betrieb"
+  },
+  "1e2acab89ac592b9a62177bf016f142b": {
+    "published": true,
+    "topic_id": "TBAFALSRPWZH",
+    "topic_name": "Flugl\u00e4rm: Raumplanung Wohnen"
+  },
+  "382e76d3fe3f2b055900b78829b9ee55": {
+    "published": true,
+    "topic_id": "TBAFALSBVWZH",
+    "topic_name": "Flugl\u00e4rm"
+  },
+  "336234b9020f07c8c0b4e24e4a83128f": {
+    "published": true,
+    "topic_id": "TBALaermuebersichtZH",
+    "topic_name": "L\u00e4rm\u00fcbersicht f\u00fcr Bauvorhaben"
+  },
+  "7ebfa7f697df6d400be8126580710f21": {
+    "published": true,
+    "topic_id": "TBALaermuebersichtRPZH",
+    "topic_name": "L\u00e4rm\u00fcbersicht f\u00fcr Raumplanung"
+  },
+  "34462e2816d039f6e71520ba2247eac5": {
+    "published": true,
+    "topic_id": "ortho98ZH",
+    "topic_name": "Orthofoto SWISSIMAGE 1998"
+  },
+  "78e3c308d784c963a7400345be6b55fe": {
+    "published": true,
+    "topic_id": "ortho02ZH",
+    "topic_name": "Orthofoto SWISSIMAGE 2002"
+  },
+  "5049f8a77ef66d556b304af357635928": {
+    "published": true,
+    "topic_id": "ortho0506ZH",
+    "topic_name": "Orthofoto SWISSIMAGE 2005/2006"
+  },
+  "91d0ce191f7aba0142fd312b6ced6e2e": {
+    "published": true,
+    "topic_id": "ortho08ZH",
+    "topic_name": "Orthofoto SWISSIMAGE 2008"
+  },
+  "f20ae9d731ae13615b4e420594e02e64": {
+    "published": true,
+    "topic_id": "ortho10ZH",
+    "topic_name": "Orthofoto SWISSIMAGE 2010"
+  },
+  "e21d301e68f880391d813d011c6960ba": {
+    "published": true,
+    "topic_id": "ortho11ZH",
+    "topic_name": "Orthofoto SWISSIMAGE 2011"
+  },
+  "f3ed3b66255f1c3842025a13447d0131": {
+    "published": true,
+    "topic_id": "ortho13ZH",
+    "topic_name": "Orthofoto SWISSIMAGE 2013"
+  },
+  "179bde2eb20d3237178387c6eafd19b4": {
+    "published": true,
+    "topic_id": "ortho14ZH",
+    "topic_name": "Orthofoto SWISSIMAGE 2014"
+  },
+  "c83de43316be45bffc017cd2a0ad6c1a": {
+    "published": true,
+    "topic_id": "HistLuftZH",
+    "topic_name": "Luftbilder 1981-2000"
+  },
+  "d7207400022c494b77134f2ce81eb321": {
+    "published": true,
+    "topic_id": "ortho19ZH",
+    "topic_name": "Orthofoto SWISSIMAGE 2019"
+  },
+  "a40cbb7821318491fe5199075a781ba2": {
+    "published": true,
+    "topic_id": "Ortho81ZH",
+    "topic_name": "Orthofoto ZH 1981"
+  },
+  "a8d1a48ea698da26bfd20d3e215c915a": {
+    "published": true,
+    "topic_id": "OrthoZH",
+    "topic_name": "Orthofoto ZH 2014-2021"
+  },
+  "b6fe57ecf155924d5fd2c4cf72043d10": {
+    "published": true,
+    "topic_id": "CMS3ZH",
+    "topic_name": "Situationsplan"
+  },
+  "55a24799d982c9a42a125963d9650726": {
+    "published": true,
+    "topic_id": "StatArbZonBewZH",
+    "topic_name": "Arbeitszonenbewirtschaftung"
+  },
+  "5dc7adb0b4c182322a18a105c5d03967": {
+    "published": true,
+    "topic_id": "StatEntZH",
+    "topic_name": "Besch\u00e4ftigtenstatistik"
+  },
+  "326ebea8d147db388a13ee5ecb557f4c": {
+    "published": true,
+    "topic_id": "StatGebAlterZH",
+    "topic_name": "Geb\u00e4udealter"
+  },
+  "48e0743bfe7d086dd8bff1ad7809558c": {
+    "published": true,
+    "topic_id": "StatGebAlterBlackZH",
+    "topic_name": "Geb\u00e4udealter (Schwarz)"
+  },
+  "29509d7d4633011a485bcc19d21a796d": {
+    "published": true,
+    "topic_id": "StatGebZH",
+    "topic_name": "Geb\u00e4udestatistik"
+  },
+  "7f7e05d5f3b79ef8386fdfac87baafeb": {
+    "published": true,
+    "topic_id": "KantRiZH",
+    "topic_name": "Kantonaler Richtplan (Beschluss des Kantonsrates (Festsetzung) Stand: 06. Februar 2023)"
+  },
+  "4358c7d2b21ff79b0a5a360e5feb11ab": {
+    "published": true,
+    "topic_id": "StatQuartiereZH",
+    "topic_name": "Quartieranalyse"
+  },
+  "8f2b787577f21c4511e9c607b4780324": {
+    "published": true,
+    "topic_id": "RegRichtSLAZH",
+    "topic_name": "Regionale Richtpl\u00e4ne"
+  },
+  "802329d4e5bb459ab8f7820a186fe232": {
+    "published": true,
+    "topic_id": "RegRichtAllZH",
+    "topic_name": "Regionale Richtpl\u00e4ne: Alle Themen"
+  },
+  "483625bd863b25be978dbae098f19d1e": {
+    "published": true,
+    "topic_id": "RegRichtVKRZH",
+    "topic_name": "Regionaler Richtplan: Verkehr"
+  },
+  "8615abbf275d7dd07cc382c0ed73334c": {
+    "published": true,
+    "topic_id": "RegRichtVSGZH",
+    "topic_name": "Regionaler Richtplan: Versorgung, Entsorgung / OeBA"
+  },
+  "fb6328c52fb4366be76cbe3be63e3642": {
+    "published": true,
+    "topic_id": "StatBevZH",
+    "topic_name": "R\u00e4umliche Bev\u00f6lkerungsstatistik"
+  },
+  "800396686f99e3cf342173415b25bd2c": {
+    "published": true,
+    "topic_id": "AreRpMagZH",
+    "topic_name": "Stand Umsetzung Mehrwertausgleich in den Gemeinden"
+  },
+  "50d85da39e527e8ad6a690d0d74cb0c4": {
+    "published": true,
+    "topic_id": "StatGewBauMoniZH",
+    "topic_name": "Standortf\u00f6rderung Gewerbebaulandmonitoring"
+  },
+  "484749be60f0692c27ce308515a94df9": {
+    "published": true,
+    "topic_id": "OerebKatasterZH",
+    "topic_name": "\u00d6REB-Kataster"
+  },
+  "b68e3761be70c5aeed4a5e09adce871f": {
+    "published": true,
+    "topic_id": "OerebKatasterprozesseZH",
+    "topic_name": "\u00d6REB-Projekte: Nutzungsplanung, Abstandslinien, Grundwasser"
+  },
+  "bee434accc4093d6b8e52b8ab353f208": {
+    "published": true,
+    "topic_id": "ARPOerebZH",
+    "topic_name": "\u00d6REB-Themen: Nutzungsplanung, Abstandslinien, Grundwasser"
+  },
+  "3efdeb7567aaa4169d46c5d222858da0": {
+    "published": true,
+    "topic_id": "ARPStandZH",
+    "topic_name": "\u00dcberbauungs- und Erschliessungsstand"
+  },
+  "4ae0ee8ae17a717d7805a8cf110c8c22": {
+    "published": true,
+    "topic_id": "Lidar2014ZH",
+    "topic_name": "Digitale H\u00f6henmodelle 2014 ZH"
+  },
+  "4d2703f388cba76649e76b9d5c8fb850": {
+    "published": true,
+    "topic_id": "Lidar2017ZH",
+    "topic_name": "Digitale H\u00f6henmodelle 2017 Bund"
+  },
+  "49286f2cce9e94113604420a1e62efa4": {
+    "published": true,
+    "topic_id": "Lidar2022ZH",
+    "topic_name": "Digitale H\u00f6henmodelle 2021/22 ZH"
+  },
+  "6ad9d53a92fe0f1d9303b6e5f97602e1": {
+    "published": true,
+    "topic_id": "Lidar2021BefliegungZH",
+    "topic_name": "LiDAR-Befliegung 2021 ZH"
+  },
+  "481c936aeefec9ba776f4123d6b961e9": {
+    "published": true,
+    "topic_id": "AlnNsPPFZH",
+    "topic_name": "Priorit\u00e4re Potenzialfl\u00e4chen f\u00fcr Feuchtgebiete (PPF)"
+  },
+  "5329cb4cde4a9ccab85eda14bedbcfb5": {
+    "published": true,
+    "topic_id": "RisikoKatasterwwwZH",
+    "topic_name": "Risikokataster (CRK), chemische und biologische Risiken"
+  },
+  "926f9c3c4dc195cec5ee8cdc977d2547": {
+    "published": true,
+    "topic_id": "EnergiewwwZH",
+    "topic_name": "Energieplan des Kantons Z\u00fcrich"
+  },
+  "63c0de6947f2dc3124d79c291c14e545": {
+    "published": true,
+    "topic_id": "AwelGEBVOLZH",
+    "topic_name": "Geb\u00e4udevolumen"
+  },
+  "19b4847d4e77c3b9f7acd74651a69ec5": {
+    "published": true,
+    "topic_id": "AwelKiesZH",
+    "topic_name": "Kiesrohstoffkarte"
+  },
+  "76ef0f6267e0af3831381d7ac5f6d920": {
+    "published": true,
+    "topic_id": "KapoNotfalltreffpunkteZH",
+    "topic_name": "Notfalltreffpunkte im Kanton Z\u00fcrich"
+  },
+  "380c5ed324cb9737428769d21ff3005c": {
+    "published": true,
+    "topic_id": "AwelSolarpotZH",
+    "topic_name": "Solarpotenzialkarte"
+  },
+  "a092561c5dea15f1de08b11503ad9e24": {
+    "published": true,
+    "topic_id": "AwelStromnetzZH",
+    "topic_name": "Stromnetzgebiete"
+  },
+  "b264b00fda56c5c3664facb4978994f8": {
+    "published": true,
+    "topic_id": "AwelGSWaermewwwZH",
+    "topic_name": "W\u00e4rmenutzungsatlas"
+  },
+  "65a327b5b051e58c0993fc89e4cadb54": {
+    "published": true,
+    "topic_id": "TBAAnlagenZH",
+    "topic_name": "Anlagen des Tiefbauamtes"
+  },
+  "03417be715adfd0fd4b3ace0cf6de9a8": {
+    "published": true,
+    "topic_id": "TbaBaustellen2ZH",
+    "topic_name": "Baustellen Kantonsstrassen"
+  },
+  "01120bc48e3ff83bdaed1a4a1e0deedd": {
+    "published": true,
+    "topic_id": "TbaBauvorhabenZH",
+    "topic_name": "Bauvorhaben TBA"
+  },
+  "14a939b39f2f1fba580b4239b214dc89": {
+    "published": true,
+    "topic_id": "AfvFussverkehrZH",
+    "topic_name": "Fussverkehrspotenzial und Relevanz von Netzabschnitten"
+  },
+  "5476fbb1cba3e98dfce9f135e5956102": {
+    "published": true,
+    "topic_id": "AfvVMwwwZH",
+    "topic_name": "Gesamtverkehrsmodell Kanton Z\u00fcrich"
+  },
+  "3eded951ae4f25a4981d9ba7a45e774d": {
+    "published": true,
+    "topic_id": "AwelHitzebelastungZH",
+    "topic_name": "Hitzebelastung im Strassenraum"
+  },
+  "1d52da5d2315ec504322e7ac2c9a086e": {
+    "published": true,
+    "topic_id": "TBAInnerAusserortsZH",
+    "topic_name": "Inner- und Ausserorts auf Kantonsstrassen"
+  },
+  "4950b66c2d4ef77b04a681ff1bd98ee1": {
+    "published": true,
+    "topic_id": "ZvvLinienZH",
+    "topic_name": "Linien des \u00f6ffentlichen Verkehrs"
+  },
+  "b9af325d57d9b31146ad9236732d0c35": {
+    "published": true,
+    "topic_id": "AFVReisezeitenZH",
+    "topic_name": "Reisezeiten auf Strassen"
+  },
+  "d2dda2a9ee92bf81ca12d1a7a47caf91": {
+    "published": true,
+    "topic_id": "SchweizMobilZH",
+    "topic_name": "SchweizMobil-Routen"
+  },
+  "428a7d0c2f6d0cc8dda8130624036eb7": {
+    "published": true,
+    "topic_id": "AFMSeilbahnenSkilifteZH",
+    "topic_name": "Seilbahnen und Skilifte"
+  },
+  "dfa5730c8b5d094436c7de66c48a949e": {
+    "published": true,
+    "topic_id": "TBAGeschZH",
+    "topic_name": "Signalisierte Geschwindigkeit Kantonsstrassen"
+  },
+  "d715a70a5a9b6c218d3c54f8a6829271": {
+    "published": true,
+    "topic_id": "TBA9ZH",
+    "topic_name": "Strassen Ausnahmetransportrouten (Entwurf zur Verf\u00fcgung VD 5241 vom 30. Sept. 2015)"
+  },
+  "9a2a49deeb4776380891a4cf0d6208f1": {
+    "published": true,
+    "topic_id": "TBAStrassenlaermZH",
+    "topic_name": "Strassenl\u00e4rm"
+  },
+  "bbc24f5505afa21b7e75885722c7e506": {
+    "published": true,
+    "topic_id": "TBAZH",
+    "topic_name": "Strassennetz"
+  },
+  "7b9e618cb726e548cbe6d44849c28b08": {
+    "published": true,
+    "topic_id": "AFVTempo30ZH",
+    "topic_name": "Tempo30- und Begegnungszonen im Kanton Z\u00fcrich (verf\u00fcgt)"
+  },
+  "79d0d5e75eb26c2b2afa66e75c07ea3f": {
+    "published": true,
+    "topic_id": "VeloinfrastrukturZH",
+    "topic_name": "Veloinfrastruktur Radwege und Radstreifen"
+  },
+  "a565b9d129fd2a11d5a86b4a9a4ae6d6": {
+    "published": true,
+    "topic_id": "VeloAlltagZH",
+    "topic_name": "Velonetz Alltag"
+  },
+  "dbd525af48b44f5469e406d640f830ca": {
+    "published": true,
+    "topic_id": "VeloparkieranlagenZH",
+    "topic_name": "Veloparkierungsanlagen"
+  },
+  "96043a6c99b275cac6ad4c00b22adcd8": {
+    "published": true,
+    "topic_id": "TbaVelosignalisationZH",
+    "topic_name": "Velosignalisation"
+  },
+  "c51d6b6aefca178ab82abe9e02107972": {
+    "published": true,
+    "topic_id": "VerkBaulinienZH",
+    "topic_name": "Verkehrsbaulinien"
+  },
+  "53f5e2f4b0f62df99c545b0d74591228": {
+    "published": true,
+    "topic_id": "TBAVMSZH",
+    "topic_name": "Verkehrsmessstellen"
+  },
+  "e3989e16c538cd6c1028d134774c89be": {
+    "published": true,
+    "topic_id": "TbaVerkehrstechnikZH",
+    "topic_name": "Verkehrstechnik (BSA)"
+  },
+  "4d2c636892efc3c66bf1d3bfaacfe90c": {
+    "published": true,
+    "topic_id": "TbaWinterZH",
+    "topic_name": "Winterdienst TBA"
+  },
+  "54f5fc916d346c2ba40e41f77f6eb917": {
+    "published": true,
+    "topic_id": "ZVVZH",
+    "topic_name": "ZVV-Haltestellen, Mobility-Standorte"
+  },
+  "4eb0ef0c691d91017e3287d26c000b70": {
+    "published": true,
+    "topic_id": "OevGueteklassenZH",
+    "topic_name": "\u00d6V-G\u00fcteklassen"
+  },
+  "1a3eb20725762fac7f5bac44765add54": {
+    "published": true,
+    "topic_id": "AwelWbAbflussZH",
+    "topic_name": "Abflussprozesskarte"
+  },
+  "84b06a1085c771c96a90a6e477f630e9": {
+    "published": true,
+    "topic_id": "AwelFliessZH",
+    "topic_name": "Fliessgew\u00e4ssertypisierung"
+  },
+  "91ffa280202e1e1d6fad06e001d0b961": {
+    "published": true,
+    "topic_id": "AwelOekoMorphwwwZH",
+    "topic_name": "Gew\u00e4sser-\u00d6komorphologie"
+  },
+  "28b88593b804815aaf8899d1044afc0f": {
+    "published": true,
+    "topic_id": "AWELWWgwsZH",
+    "topic_name": "Gew\u00e4sserschutzkarte"
+  },
+  "ec0d1f0703f114602718ed26413cc793": {
+    "published": true,
+    "topic_id": "AwelGrundWaHWwwwZH",
+    "topic_name": "Grundwasserkarte (Hochwasserstand)"
+  },
+  "5ec5f3a3f279a0190cf10bb725b0cdc0": {
+    "published": true,
+    "topic_id": "AwelGrundWaMWwwwZH",
+    "topic_name": "Grundwasserkarte (Mittelwasserstand)"
+  },
+  "040ee0f3a33f27e60556a848b118da3e": {
+    "published": true,
+    "topic_id": "AwelWBHydroStudZH",
+    "topic_name": "Hydrologische Studien"
+  },
+  "97bb1d28456f0adcdd01dff091597fb0": {
+    "published": true,
+    "topic_id": "AwelHydroStatZH",
+    "topic_name": "Hydrometrische Stationen"
+  },
+  "27a2322c680dd1223a69497b64f748b3": {
+    "published": true,
+    "topic_id": "AwelGKHWwassertiefen1ZH",
+    "topic_name": "Naturgefahrenkarten"
+  },
+  "6d8b6ca8bbaa65a86e83f436e2994892": {
+    "published": true,
+    "topic_id": "AwelGKHWsynoptischZH",
+    "topic_name": "Naturgefahrenkarten"
+  },
+  "f76e61852f4379624bc8810259bf475a": {
+    "published": true,
+    "topic_id": "AwelGKHWmassenbewegungZH",
+    "topic_name": "Naturgefahrenkarten"
+  },
+  "2a9f053a628d1041ffa558f10adcdaf7": {
+    "published": true,
+    "topic_id": "AwelOberAbflussZH",
+    "topic_name": "Oberfl\u00e4chenabfluss"
+  },
+  "19ce75d08cfa6bcbe8dbf1ed0a723821": {
+    "published": true,
+    "topic_id": "AwelWBRevitwwwZH",
+    "topic_name": "Revitalisierungsplanung (Gew\u00e4sserrevitalisierung)"
+  },
+  "97f285939ba5b9b447c9a4c2db8a1281": {
+    "published": true,
+    "topic_id": "AwelRKNGZH",
+    "topic_name": "Risikokarte Naturgefahren"
+  },
+  "cfe6593284b0fb041d9f566d5ec084d4": {
+    "published": true,
+    "topic_id": "AwelSBKwwwZH",
+    "topic_name": "Seebautenkataster"
+  },
+  "54ded26c06f49dd063a317fb3dbf0cce": {
+    "published": true,
+    "topic_id": "GVZHochwasserZH",
+    "topic_name": "Vorwarnzeiten Hochwasser"
+  },
+  "3ffc92c83e9d8537d8e8a3fc68efde7b": {
+    "published": true,
+    "topic_id": "AwelWBZustwwwZH",
+    "topic_name": "Zust\u00e4ndigkeiten Abteilung Wasserbau"
+  },
+  "801a29fe923399721ef5a052e7d7d8f2": {
+    "published": true,
+    "topic_id": "AwelWBwwwZH",
+    "topic_name": "\u00d6ffentliche Oberfl\u00e4chengew\u00e4sser, Gew\u00e4sserraum, Wasserrechte und Hochwasserr\u00fcckhaltebecken"
+  }
+}

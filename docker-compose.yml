@@ -1,0 +1,45 @@
+volumes:
+  grav-data:
+
+services:
+  grav:
+    build: ./
+    image: gb3-grav-cms:compose
+    ports:
+      - 8080:80
+    volumes:
+        # Accounts
+      - type: bind
+        source: ./data/accounts
+        target: /cms_data/user/accounts
+        # Blueprints
+      - type: bind
+        source: ./system/blueprints/flex-objects
+        target: /var/www/html/user/blueprints/flex-objects
+        # Config
+      - type: bind
+        source: ./system/config/groups.yaml
+        target: /var/www/html/user/config/groups.yaml
+      - type: bind
+        source: ./system/config/plugins/flex-objects.yaml
+        target: /var/www/html/user/config/plugins/flex-objects.yaml
+        # Data - Flex-Objects
+      - type: bind
+        source: ./data/data/flex-objects
+        target: /cms_data/user/data/flex-objects
+        # Pages
+      - type: bind
+        source: ./data/pages
+        target: /cms_data/user/pages
+        # Plugins - Topic
+      - type: bind
+        source: ./system/plugins/topics
+        target: /var/www/html/user/plugins/topics
+        # Theme - Templates
+      - type: bind
+        source: ./system/themes/quark/templates/discovermaps.json.twig
+        target: /var/www/html/user/themes/quark/templates/discovermaps.json.twig
+
+      - type: volume
+        source: grav-data
+        target: /var/www/html
