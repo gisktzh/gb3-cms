@@ -18,11 +18,8 @@ services:
         target: /var/www/html/user/blueprints/flex-objects
         # Config
       - type: bind
-        source: ./system/config/groups.yaml
-        target: /var/www/html/user/config/groups.yaml
-      - type: bind
-        source: ./system/config/plugins/flex-objects.yaml
-        target: /var/www/html/user/config/plugins/flex-objects.yaml
+        source: ./system/config
+        target: /var/www/html/user/config
         # Data - Flex-Objects
       - type: bind
         source: ./data/data/flex-objects

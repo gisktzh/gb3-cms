@@ -3,12 +3,12 @@ Grav is a modern open source flat-file CMS. This repository contains the officia
 
 This docker image is currently pretty minimal and uses:
 
-* apache-2.4.38
+* apache-2.4.56
 * GD library
 * Unzip library
-* php8.1.16
-* php8.1.16-opcache
-* php8.1.16-yaml
+* php8.1.17
+* php8.1.17-opcache
+* php8.1.17-yaml
 * cron
 * vim editor
 
@@ -42,13 +42,20 @@ existence of these files and only copies them if they do not exist.
 docker build -t gb3-grav-cms:latest .
 ```
 
+To build a docker image within a proxy you can use the following command instead:
+
+```
+docker build --build-arg http_proxy=http://<proxy_ip>:<proxy_port> --build-arg https_proxy=https://<proxy_ip>:<proxy_port> -t gb3-grav-cms:latest .
+```
+You only need to replace `proxy_ip` and `proxy_port`
+
 ## Running Grav Image with Latest Grav + Admin:
 
 ```
-docker run -p 8080:80 `
-  -v nameOfMyVolume:/cms_data`
-  --name gb3-grav-cms gb3-grav-cms:latest
+docker run -p 8080:80 -v nameOfMyVolume:/cms_data --name gb3-grav-cms gb3-grav-cms:latest
 ```
+
+Example: `docker run -p 8080:80 -v grav-data:/cms_data --name gb3-grav-cms gb3-grav-cms:latest`
 
 Point browser to `http://localhost:8080/admin` and login as a user account (see Keepass for the default passwords)
 
@@ -70,8 +77,9 @@ The deployment takes one volume to persist user data - this volume is mapped to 
 
 To run this locally:
 ```powershell
-docker run -p 8080:80 `
-  -v nameOfVolume:/cms_data
-  --name gb3-grav-cms gb3-grav-cms:latest
+docker run -p 8080:80 -v nameOfVolume:/cms_data --name gb3-grav-cms gb3-grav-cms:latest
 ```
+
+Example: `docker run -p 8080:80 -v grav-data:/cms_data --name gb3-grav-cms gb3-grav-cms:latest`
+
 This command will boot the container and mount two local folders for synchronizing data.

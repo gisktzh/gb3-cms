@@ -1,4 +1,4 @@
-FROM php:8.1.16-apache
+FROM php:8.1.17-apache
 LABEL maintainer="Andy Miller <rhuk@getgrav.org> (@rhukster)"
 
 # Enable Apache Rewrite + Expires Module
@@ -41,12 +41,11 @@ RUN { \
     echo 'upload_max_filesize=128M'; \
     echo 'post_max_size=128M'; \
     echo 'expose_php=off'; \
+    echo 'allow_url_fopen=0'; \
+#    echo 'opcache.enable=1'; \
+#    echo 'opcache.jit_buffer_size=100M'; \
+#    echo 'opcache.jit=1235'; \
     } > /usr/local/etc/php/conf.d/php-recommended.ini
-
-# not compatible with PHP 8.1.16
-#RUN pecl install apcu \
-#    && pecl install yaml-2.0.4 \
-#    && docker-php-ext-enable apcu yaml
 
 # Set user to www-data
 RUN chown www-data:www-data /var/www
@@ -57,15 +56,13 @@ ARG GRAV_VERSION=latest
 
 # Install grav
 WORKDIR /var/www
-RUN curl -o grav-admin.zip -SL https://getgrav.org/download/core/grav-admin/${GRAV_VERSION} && \
+RUN curl -k -o grav-admin.zip -SL https://getgrav.org/download/core/grav-admin/${GRAV_VERSION} && \
     unzip grav-admin.zip && \
     mv -T /var/www/grav-admin /var/www/html && \
     rm grav-admin.zip
 
 # Create cron job for Grav maintenance scripts
 RUN (crontab -l; echo "* * * * * cd /var/www/html;/usr/local/bin/php bin/grav scheduler 1>> /dev/null 2>&1") | crontab -
-
-
 
 # Install CORS plugin
 WORKDIR /var/www/html
@@ -87,7 +84,6 @@ RUN chmod -R 777 /.docker
 # These are all the folders that are NOT (or should not be) controlled at runtime
 COPY --chown=www-data:www-data system /var/www/html/user
 
-
 # Setup symlinks for all directories that contain data controlled at runtime (i.e. our "database")
 # Create rootdirectory where our symlinked data shall reside
 RUN mkdir /cms_data
@@ -103,7 +99,6 @@ RUN mkdir -p /cms_data/user/accounts &&  \
     mv /var/www/html/user/accounts /cms_data/user &&  \
     ln -s /cms_data/user/accounts /var/www/html/user
 
-# pages is not actually needed, but might be in the future - so we do not forget
 RUN mkdir -p /cms_data/user/pages &&  \
     chown www-data:www-data /cms_data/user/pages &&  \
     mv /var/www/html/user/pages /cms_data/user &&  \
@@ -118,5 +113,7 @@ RUN mkdir /cms_data/backup &&  \
     chown www-data:www-data /cms_data/backup &&  \
     mv /var/www/html/backup /cms_data &&  \
     ln -s /cms_data/backup /var/www/html
+
+#VOLUME ["/var/www/html/backup", "/var/www/html/logs", "/var/www/html/user"]
 
 ENTRYPOINT ["bash", "-c", "/.docker/entrypoint.sh /.docker/grav_defaults/user/"]
