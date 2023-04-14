@@ -2,10 +2,10 @@ publisher:
   access:
     admin:
       login: true
-      pages: false
       statistics: true
       topics: true
       discovermaps: true
+      pageinfos: true
   enabled: true
 maintainer:
   access:

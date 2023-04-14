@@ -1,5 +1,5 @@
-title: Discover Maps
-description: Ein Ordner mit vergangenen, aktuellen und zukünftigen Karten zum Entdecken.
+title: Page Infos
+description: Ein Ordner mit vergangenen, aktuellen und zukünftigen Infos zu Seiten.
 type: flex-objects
 
 # Flex Configuration
@@ -8,14 +8,14 @@ config:
   admin:
     # Admin router (optional)
     router:
-      path: '/discovermaps'
+      path: '/pageinfos'
 
     # Admin menu (optional)
     menu:
       list:
-        route: '/discovermaps'
-        title: Karten entdecken
-        icon: fa-compass
+        route: '/pageinfos'
+        title: Hinweise für Seiten
+        icon: fa-file-code-o
         # Authorization to collection admin
         authorize: ['admin.topics.list', 'admin.super']
         # Priority -10 .. 10 (highest goes up)
@@ -29,7 +29,7 @@ config:
       # Primary permissions
       admin.topics:
         type: crudpl
-        label: DiscoverMaps
+        label: PageInfos
 
     # List view
     list:
@@ -37,7 +37,7 @@ config:
       fields:
         header.title:
           link: edit
-        header.id:
+        header.page:
           link: edit
         header.from_date:
         header.to_date:
@@ -51,7 +51,7 @@ config:
     preview:
       enabled: false
       route:
-        #template: '/plugins/flex-objects/directory:discovermaps'
+        #template: '/plugins/flex-objects/directory:pageinfos'
 
     # Data Export
     export:
@@ -59,7 +59,7 @@ config:
       method: 'jsonSerialize'
       formatter:
         class: 'Grav\Framework\File\Formatter\YamlFormatter'
-      filename: 'discovermaps'
+      filename: 'pageinfos'
 
   # Site Configuration
   site:
@@ -74,7 +74,7 @@ config:
           - 'flex/{TYPE}/object/{LAYOUT}{EXT}'
       defaults:
         # Default template {TYPE}; overridden by filename of this blueprint if template folder exists
-        type: discovermaps
+        type: pageinfos
         # Default template {LAYOUT}; can be overridden in render calls (usually Twig in templates)
         layout: default
 
@@ -94,7 +94,7 @@ config:
           # File formatter class, in this case the file is stored in markdown
           class: 'Grav\Framework\File\Formatter\JsonFormatter'
         # JSON file where all the objects will be stored
-        folder: user-data://flex-objects/discovermaps
+        folder: user-data://flex-objects/pageinfos
     ordering:
       header.from_date: ASC
       header.to_date: ASC
@@ -124,25 +124,17 @@ form:
       label: 'Beschreibung'
       validate:
         required: true
-    header.image:
-      type: file
-      style: vertical
-      label: 'Kartenbild <span class="required">*</span>' # hack to simulate a 'required' field
-      random_name: true
-      autofocus: false
-      destination: 'assets/uploads/discovermaps'
-      multiple: false
-      accept:
-        - image/*
-      validate:
-        required: false # required does not work for files/images; known bug: https://github.com/getgrav/grav-plugin-form/issues/116
-    header.id:
+    header.page:
       type: select
       style: vertical
-      label: 'Topic ID'
-      placeholder: Eingabe einer Topic ID
+      label: 'Seitenname'
+      placeholder: Eingabe der Seite, auf welcher der Hinweis eingeblendet werden soll
       default: null
-      data-options@: '\Grav\Plugin\TopicsPlugin::topics'
+      options:
+        start: 'Übersicht'
+        map: 'GIS Browser'
+        datacatalogue: 'Datenkatalog'
+        support: 'Hilfe & Support'
       validate:
         required: true
     header.from_date:
