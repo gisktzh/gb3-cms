@@ -1,6 +1,8 @@
 FROM php:8.1.17-apache
 LABEL maintainer="Andy Miller <rhuk@getgrav.org> (@rhukster)"
 
+ARG http_proxy
+
 # Enable Apache Rewrite + Expires Module
 RUN a2enmod rewrite expires && \
     sed -i 's/ServerTokens OS/ServerTokens ProductOnly/g' \
@@ -62,9 +64,6 @@ RUN curl -k -o grav-admin.zip -SL https://getgrav.org/download/core/grav-admin/$
 # Create cron job for Grav maintenance scripts
 RUN (crontab -l; echo "* * * * * cd /var/www/html;/usr/local/bin/php bin/grav scheduler 1>> /dev/null 2>&1") | crontab -
 
-# Install CORS plugin
-WORKDIR /var/www/html
-RUN bin/gpm install CORS
 
 # Return to root user
 USER root
@@ -81,6 +80,15 @@ RUN chmod -R 777 /.docker
 # Copy Grav system folders
 # These are all the folders that are NOT (or should not be) controlled at runtime
 COPY --chown=www-data:www-data system /var/www/html/user
+
+# Adjust /var/www/html/user/config/system.yaml by adding proxy settings (if any)
+RUN if [ ! "$http_proxy" ] ; then echo "Proxy not set" ; else sed -i "s|proxy_url: null|proxy_url: '$http_proxy'|g" /var/www/html/user/config/system.yaml ; fi
+
+# Install CORS plugin
+USER www-data
+WORKDIR /var/www/html
+RUN bin/gpm install CORS -n
+USER root
 
 # Setup symlinks for all directories that contain data controlled at runtime (i.e. our "database")
 # Create rootdirectory where our symlinked data shall reside
