@@ -15,7 +15,10 @@ DEFAULT_FILES=(
   "accounts/maintainer.yaml;accounts"
   "accounts/writer.yaml;accounts"
   "data/flex-objects/topics.json;data/flex-objects"
-  "pages/discovermaps/discovermaps.md;pages/discovermaps"
+  "pages/01.startpage/default.md;pages/01.startpage"
+  "pages/02.discovermaps/discovermaps.md;pages/02.discovermaps"
+  "pages/03.pageinfos/pageinfos.md;pages/03.pageinfos"
+  "pages/04.mapinfos/mapinfos.md;pages/04.mapinfos"
 )
 
 cat << "EOF"

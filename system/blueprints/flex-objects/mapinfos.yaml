@@ -1,5 +1,5 @@
-title: Page Infos
-description: Ein Ordner mit vergangenen, aktuellen und zukünftigen Infos zu Seiten.
+title: Map Infos
+description: Ein Ordner mit vergangenen, aktuellen und zukünftigen Infos zu Karten.
 type: flex-objects
 
 # Flex Configuration
@@ -8,13 +8,13 @@ config:
   admin:
     # Admin router (optional)
     router:
-      path: '/pageinfos'
+      path: '/mapinfos'
 
     # Admin menu (optional)
     menu:
       list:
-        route: '/pageinfos'
-        title: Hinweise für Seiten
+        route: '/mapinfos'
+        title: Hinweise für Karten
         icon: fa-info-circle
         # Authorization to collection admin
         authorize: ['admin.topics.list', 'admin.super']
@@ -29,13 +29,15 @@ config:
       # Primary permissions
       admin.topics:
         type: crudpl
-        label: PageInfos
+        label: MapInfos
 
     # List view
     list:
       title: name
       fields:
         header.title:
+          link: edit
+        header.topics:
           link: edit
         header.from_date:
         header.to_date:
@@ -49,7 +51,7 @@ config:
     preview:
       enabled: false
       route:
-        #template: '/plugins/flex-objects/directory:pageinfos'
+        #template: '/plugins/flex-objects/directory:mapinfos'
 
     # Data Export
     export:
@@ -57,7 +59,7 @@ config:
       method: 'jsonSerialize'
       formatter:
         class: 'Grav\Framework\File\Formatter\YamlFormatter'
-      filename: 'pageinfos'
+      filename: 'mapinfos'
 
   # Site Configuration
   site:
@@ -72,7 +74,7 @@ config:
           - 'flex/{TYPE}/object/{LAYOUT}{EXT}'
       defaults:
         # Default template {TYPE}; overridden by filename of this blueprint if template folder exists
-        type: pageinfos
+        type: mapinfos
         # Default template {LAYOUT}; can be overridden in render calls (usually Twig in templates)
         layout: default
 
@@ -92,7 +94,7 @@ config:
           # File formatter class, in this case the file is stored in markdown
           class: 'Grav\Framework\File\Formatter\JsonFormatter'
         # JSON file where all the objects will be stored
-        folder: user-data://flex-objects/pageinfos
+        folder: user-data://flex-objects/mapinfos
     ordering:
       header.from_date: ASC
       header.to_date: ASC
@@ -103,6 +105,7 @@ config:
       # Fields to be searched
       fields:
         - header.title
+        - header.topics
 
 form:
   validation: loose
@@ -121,19 +124,17 @@ form:
       label: 'Beschreibung'
       validate:
         required: true
-    header.pages:
-      type: checkboxes
+    header.topics:
+      type: selectize
       style: vertical
-      label: 'Anzeige-Tabs'
-      placeholder: Eingabe der Seite, auf welcher der Hinweis eingeblendet werden soll
-      options:
-        start: 'Übersicht'
-        map: 'GIS Browser'
-        datacatalogue: 'Datenkatalog'
-        support: 'Hilfe & Support'
-      use: keys
+      label: 'Topic IDs'
+      placeholder: Eingabe einer oder mehrerer Topic IDs
+      selectize:
+        data-options@: '\Grav\Plugin\TopicsPlugin::topicsAsTextValuePair'
+        create: false
       validate:
         required: true
+        type: commalist
     header.from_date:
       type: datetime
       format: d.m.Y
