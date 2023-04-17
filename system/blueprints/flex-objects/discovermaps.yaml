@@ -130,7 +130,6 @@ form:
       label: 'Kartenbild <span class="required">*</span>' # hack to simulate a 'required' field
       random_name: true
       autofocus: false
-      destination: 'assets/uploads/discovermaps'
       multiple: false
       accept:
         - image/*

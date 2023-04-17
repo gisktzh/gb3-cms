@@ -26,7 +26,7 @@ languages:
   override_locale: false
   pages_fallback_only: false
 home:
-  alias: /discovermaps
+  alias: /startpage
   hide_in_urls: false
 pages:
   type: regular
