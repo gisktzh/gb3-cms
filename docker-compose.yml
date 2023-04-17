@@ -1,5 +1,6 @@
 volumes:
   grav-data:
+  grav-cms-data:
 
 services:
   grav:
@@ -43,3 +44,6 @@ services:
       - type: volume
         source: grav-data
         target: /var/www/html
+      - type: volume
+        source: grav-cms-data
+        target: /cms_data
