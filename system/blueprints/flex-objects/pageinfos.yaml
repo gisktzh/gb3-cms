@@ -138,13 +138,13 @@ form:
       type: datetime
       format: d.m.Y
       style: vertical
-      label: 'Sichbar von'
+      label: 'Sichtbar von'
       validate:
         required: true
     header.to_date:
       type: datetime
       format: d.m.Y
       style: vertical
-      label: 'Sichbar bis'
+      label: 'Sichtbar bis'
       validate:
         required: true
