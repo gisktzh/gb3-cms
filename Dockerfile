@@ -42,9 +42,7 @@ RUN { \
     echo 'post_max_size=128M'; \
     echo 'expose_php=off'; \
     echo 'allow_url_fopen=0'; \
-#    echo 'opcache.enable=1'; \
-#    echo 'opcache.jit_buffer_size=100M'; \
-#    echo 'opcache.jit=1235'; \
+    echo 'opcache.enable=1'; \
     } > /usr/local/etc/php/conf.d/php-recommended.ini
 
 # Set user to www-data
@@ -113,7 +111,5 @@ RUN mkdir /cms_data/backup &&  \
     chown www-data:www-data /cms_data/backup &&  \
     mv /var/www/html/backup /cms_data &&  \
     ln -s /cms_data/backup /var/www/html
-
-#VOLUME ["/var/www/html/backup", "/var/www/html/logs", "/var/www/html/user"]
 
 ENTRYPOINT ["bash", "-c", "/.docker/entrypoint.sh /.docker/grav_defaults/user/"]
