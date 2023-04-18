@@ -84,12 +84,12 @@ class TopicsPlugin extends Plugin
      */
     public static function topicsAsTextValuePair(): array
     {
-      $topicIds = TopicsPlugin::topics();
+      $topicIds = self::topics();
 
       /** @var array<array<string, string>> */
       $children = [];
       foreach ($topicIds as $topicId => $value) {
-        array_push($children, array('text' => $topicId, 'value' => $topicId));
+        array_push($children, ['text' => $topicId, 'value' => $topicId]);
       }
 
       return $children;

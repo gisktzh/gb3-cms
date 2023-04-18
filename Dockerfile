@@ -82,7 +82,7 @@ RUN chmod -R 777 /.docker
 COPY --chown=www-data:www-data system /var/www/html/user
 
 # Adjust /var/www/html/user/config/system.yaml by adding proxy settings (if any)
-RUN if [ ! "$http_proxy" ] ; then echo "Proxy not set" ; else sed -i "s|proxy_url: null|proxy_url: '$http_proxy'|g" /var/www/html/user/config/system.yaml ; fi
+RUN if [ "$http_proxy" ] ; then sed -i "s|proxy_url: null|proxy_url: '$http_proxy'|g" /var/www/html/user/config/system.yaml ; fi
 
 # Install CORS plugin
 USER www-data

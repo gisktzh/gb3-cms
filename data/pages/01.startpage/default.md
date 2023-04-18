@@ -1,5 +1,7 @@
 ---
 title: Home
+access:
+    admin.login: true
 ---
 
 # GB3 CMS Startseite
