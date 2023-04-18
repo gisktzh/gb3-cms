@@ -26,7 +26,7 @@ languages:
   override_locale: false
   pages_fallback_only: false
 home:
-  alias: /discovermaps
+  alias: /startpage
   hide_in_urls: false
 pages:
   type: regular
@@ -212,8 +212,8 @@ http:
   proxy_url: null
   proxy_cert_path: null
   concurrent_connections: 5
-  verify_peer: true
-  verify_host: true
+  verify_peer: false
+  verify_host: false
 accounts:
   type: regular
   storage: file

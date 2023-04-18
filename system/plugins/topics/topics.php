@@ -50,7 +50,8 @@ class TopicsPlugin extends Plugin
     }
 
     /**
-     * Returns all available and published (published === true) topics as an array
+     * Returns all available and published (published === true) topics as an array of topic IDs
+     * @return (string|string)[]
      */
     public static function topics(): array
     {
@@ -61,6 +62,7 @@ class TopicsPlugin extends Plugin
       $topicDirectory = $grav['flex']->getDirectory('topics');
       $topics = $topicDirectory->getCollection();
 
+      /** @var array<string, string> */
       $children = [];
       foreach ($topics as $topic) {
         $published = $topic['published'];
@@ -68,6 +70,26 @@ class TopicsPlugin extends Plugin
           $topicId = $topic['topic_id'];
           $children[$topicId] = $topicId;
         }
+      }
+
+      return $children;
+    }
+
+    /**
+     * Returns all available and published (published === true) topics as an array of 'text'-'value' pairs both containing the topic ID
+     * @return array[
+     *  'text' => string,
+     *  'value' => string
+     * ]
+     */
+    public static function topicsAsTextValuePair(): array
+    {
+      $topicIds = self::topics();
+
+      /** @var array<array<string, string>> */
+      $children = [];
+      foreach ($topicIds as $topicId => $value) {
+        array_push($children, ['text' => $topicId, 'value' => $topicId]);
       }
 
       return $children;

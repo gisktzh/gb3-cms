@@ -1,5 +1,6 @@
 volumes:
   grav-data:
+  grav-cms-data:
 
 services:
   grav:
@@ -36,7 +37,16 @@ services:
       - type: bind
         source: ./system/themes/quark/templates/discovermaps.json.twig
         target: /var/www/html/user/themes/quark/templates/discovermaps.json.twig
+      - type: bind
+        source: ./system/themes/quark/templates/pageinfos.json.twig
+        target: /var/www/html/user/themes/quark/templates/pageinfos.json.twig
+      - type: bind
+        source: ./system/themes/quark/templates/mapinfos.json.twig
+        target: /var/www/html/user/themes/quark/templates/mapinfos.json.twig
 
       - type: volume
         source: grav-data
         target: /var/www/html
+      - type: volume
+        source: grav-cms-data
+        target: /cms_data
