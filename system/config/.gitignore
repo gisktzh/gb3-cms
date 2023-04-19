@@ -1,0 +1,5 @@
+# Settings that can be ignored for now
+media.yaml
+security.yaml
+site.yaml
+versions.yaml

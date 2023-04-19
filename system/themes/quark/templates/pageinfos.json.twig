@@ -1,5 +1,5 @@
-{% set title = 'discover-maps' %}
-{% set directory = 'discovermaps' %}
+{% set title = 'page-infos' %}
+{% set directory = 'pageinfos' %}
 
 {% set flex = grav.get('flex_objects') %}
 {% set directory = flex.directory(directory) %}
@@ -11,9 +11,5 @@
     |filter(active_item => (active_item.from_date|date('Ymd') <= current_month and active_item.to_date|date('Ymd') >= current_month)) %}
 
 {"{{- title -}}":[
-{% for active_item in active_items %}
-{% if active_item.image %}{% set active_item = active_item|merge({'image': (active_item.image|first)}) %}{% endif %}
-{{- active_item|json_encode|raw -}}
-{% if not loop.last %},{% endif %}
-{% endfor %}
+{{- active_items|map(active_item => active_item|json_encode)|join(',')|raw -}}
 ]}
