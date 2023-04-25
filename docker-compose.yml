@@ -1,11 +1,15 @@
 volumes:
+  all-grav-data:
   grav-data:
-  grav-cms-data:
 
 services:
   grav:
-    build: ./
     image: gb3-grav-cms:compose
+    build:
+      context: .
+      args:
+        - http_proxy=${http_proxy}
+        - SUBFOLDER=${SUBFOLDER}
     ports:
       - 8080:80
     volumes:
@@ -16,11 +20,11 @@ services:
         # Blueprints
       - type: bind
         source: ./system/blueprints/flex-objects
-        target: /var/www/html/user/blueprints/flex-objects
+        target: /var/www/html${SUBFOLDER}/user/blueprints/flex-objects
         # Config
       - type: bind
         source: ./system/config
-        target: /var/www/html/user/config
+        target: /var/www/html${SUBFOLDER}/user/config
         # Data - Flex-Objects
       - type: bind
         source: ./data/data/flex-objects
@@ -32,21 +36,21 @@ services:
         # Plugins - Topic
       - type: bind
         source: ./system/plugins/topics
-        target: /var/www/html/user/plugins/topics
+        target: /var/www/html${SUBFOLDER}/user/plugins/topics
         # Theme - Templates
       - type: bind
         source: ./system/themes/quark/templates/discovermaps.json.twig
-        target: /var/www/html/user/themes/quark/templates/discovermaps.json.twig
+        target: /var/www/html${SUBFOLDER}/user/themes/quark/templates/discovermaps.json.twig
       - type: bind
         source: ./system/themes/quark/templates/pageinfos.json.twig
-        target: /var/www/html/user/themes/quark/templates/pageinfos.json.twig
+        target: /var/www/html${SUBFOLDER}/user/themes/quark/templates/pageinfos.json.twig
       - type: bind
         source: ./system/themes/quark/templates/mapinfos.json.twig
-        target: /var/www/html/user/themes/quark/templates/mapinfos.json.twig
+        target: /var/www/html${SUBFOLDER}/user/themes/quark/templates/mapinfos.json.twig
 
       - type: volume
-        source: grav-data
-        target: /var/www/html
+        source: all-grav-data
+        target: /var/www/html${SUBFOLDER}
       - type: volume
-        source: grav-cms-data
+        source: grav-data
         target: /cms_data

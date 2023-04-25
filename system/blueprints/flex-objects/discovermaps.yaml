@@ -1,4 +1,4 @@
-title: Discover Maps
+title: Karten entdecken
 description: Ein Ordner mit vergangenen, aktuellen und zukünftigen Karten zum Entdecken.
 type: flex-objects
 
@@ -130,6 +130,7 @@ form:
       label: 'Kartenbild <span class="required">*</span>' # hack to simulate a 'required' field
       random_name: true
       autofocus: false
+      destination: 'assets/uploads/discovermaps'
       multiple: false
       accept:
         - image/*
