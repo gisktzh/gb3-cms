@@ -70,11 +70,13 @@ careful when committing changes.
 
 ### Running Grav Image with docker-compose
 
+Firstly, rename `.env.example` to `.env`. Then use the following command to build and start the docker image using compose:
+
 ```shell
 docker-compose up -d -f ./docker-compose.yml
 ```
 
-Docker compose will create two images:
+Docker compose will create two volumes:
 * `all-grav-data` points to the CMS root folder containing all Grav data
 * `grav-data` points to a small subset of Grav data that is usually used in a productive environment to backup all important files.
 
