@@ -2,6 +2,7 @@ FROM php:8.1.17-apache
 LABEL maintainer="Andy Miller <rhuk@getgrav.org> (@rhukster)"
 
 ARG http_proxy
+ARG SUBFOLDER='/cms'
 
 # Enable Apache Rewrite + Expires Module
 RUN a2enmod rewrite expires && \
@@ -58,11 +59,11 @@ ARG GRAV_VERSION=latest
 WORKDIR /var/www
 RUN curl -k -o grav-admin.zip -SL https://getgrav.org/download/core/grav-admin/${GRAV_VERSION} && \
     unzip grav-admin.zip && \
-    mv -T /var/www/grav-admin /var/www/html && \
+    mv -T /var/www/grav-admin /var/www/html${SUBFOLDER} && \
     rm grav-admin.zip
 
 # Create cron job for Grav maintenance scripts
-RUN (crontab -l; echo "* * * * * cd /var/www/html;/usr/local/bin/php bin/grav scheduler 1>> /dev/null 2>&1") | crontab -
+RUN (crontab -l; echo "* * * * * cd /var/www/html${SUBFOLDER};/usr/local/bin/php bin/grav scheduler 1>> /dev/null 2>&1") | crontab -
 
 
 # Return to root user
@@ -79,14 +80,14 @@ RUN chmod -R 777 /.docker
 
 # Copy Grav system folders
 # These are all the folders that are NOT (or should not be) controlled at runtime
-COPY --chown=www-data:www-data system /var/www/html/user
+COPY --chown=www-data:www-data system /var/www/html${SUBFOLDER}/user
 
-# Adjust /var/www/html/user/config/system.yaml by adding proxy settings (if any)
-RUN if [ "$http_proxy" ] ; then sed -i "s|proxy_url: null|proxy_url: '$http_proxy'|g" /var/www/html/user/config/system.yaml ; fi
+# Adjust /var/www/html${subfolder}/user/config/system.yaml by adding proxy settings (if any)
+RUN if [ "$http_proxy" ] ; then sed -i "s|proxy_url: null|proxy_url: '$http_proxy'|g" /var/www/html${SUBFOLDER}/user/config/system.yaml ; fi
 
 # Install CORS plugin
 USER www-data
-WORKDIR /var/www/html
+WORKDIR /var/www/html${SUBFOLDER}
 RUN bin/gpm install CORS -n
 USER root
 
@@ -97,27 +98,27 @@ RUN mkdir /cms_data
 # Move folders that should be backupped to rootdirectory and set up symlinks
 RUN mkdir -p /cms_data/user/data &&  \
     chown www-data:www-data /cms_data/user/data &&  \
-    mv /var/www/html/user/data /cms_data/user &&  \
-    ln -s /cms_data/user/data /var/www/html/user
+    mv /var/www/html${SUBFOLDER}/user/data /cms_data/user &&  \
+    ln -s /cms_data/user/data /var/www/html${SUBFOLDER}/user
 
 RUN mkdir -p /cms_data/user/accounts &&  \
     chown www-data:www-data /cms_data/user/accounts &&  \
-    mv /var/www/html/user/accounts /cms_data/user &&  \
-    ln -s /cms_data/user/accounts /var/www/html/user
+    mv /var/www/html${SUBFOLDER}/user/accounts /cms_data/user &&  \
+    ln -s /cms_data/user/accounts /var/www/html${SUBFOLDER}/user
 
 RUN mkdir -p /cms_data/user/pages &&  \
     chown www-data:www-data /cms_data/user/pages &&  \
-    mv /var/www/html/user/pages /cms_data/user &&  \
-    ln -s /cms_data/user/pages /var/www/html/user
+    mv /var/www/html${SUBFOLDER}/user/pages /cms_data/user &&  \
+    ln -s /cms_data/user/pages /var/www/html${SUBFOLDER}/user
 
 RUN mkdir /cms_data/assets &&  \
     chown www-data:www-data /cms_data/assets &&  \
-    mv /var/www/html/assets /cms_data &&  \
-    ln -s /cms_data/assets /var/www/html
+    mv /var/www/html${SUBFOLDER}/assets /cms_data &&  \
+    ln -s /cms_data/assets /var/www/html${SUBFOLDER}
 
 RUN mkdir /cms_data/backup &&  \
     chown www-data:www-data /cms_data/backup &&  \
-    mv /var/www/html/backup /cms_data &&  \
-    ln -s /cms_data/backup /var/www/html
+    mv /var/www/html${SUBFOLDER}/backup /cms_data &&  \
+    ln -s /cms_data/backup /var/www/html${SUBFOLDER}
 
 ENTRYPOINT ["bash", "-c", "/.docker/entrypoint.sh /.docker/grav_defaults/user/"]
