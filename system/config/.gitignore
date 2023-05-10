@@ -1,4 +1,4 @@
-# Settings that can be ignored for now
+# Settings that can be ignored for now as they do not differ from the default settings.
 media.yaml
 security.yaml
 site.yaml
