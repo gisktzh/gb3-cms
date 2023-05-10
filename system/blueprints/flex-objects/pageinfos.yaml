@@ -121,6 +121,16 @@ form:
       label: 'Beschreibung'
       validate:
         required: true
+    header.severity:
+      type: select
+      style: vertical
+      label: 'Schweregrad'
+      default: info
+      options:
+        info: Hinweis
+        warning: Warnung
+      validate:
+        required: true
     header.pages:
       type: checkboxes
       style: vertical
