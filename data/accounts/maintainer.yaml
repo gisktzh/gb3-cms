@@ -6,7 +6,7 @@ content_editor: default
 groups:
   - maintainer
 avatar: {  }
-hashed_password: $2y$10$kXq4MXf4.WxPKWSv1XYdP.H9ROwlu06YSdbu0S6f/CuEAJl7K3RJ6
+hashed_password: ***REMOVED***
 access:
   site:
     login: true
