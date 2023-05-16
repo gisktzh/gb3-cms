@@ -1,15 +1,12 @@
 {% set title = 'map-infos' %}
-{% set directory = 'mapinfos' %}
+{% set collection_name = 'mapinfos' %}
 
-{% set flex = grav.get('flex_objects') %}
-{% set directory = flex.directory(directory) %}
-{% set collection = directory.getCollection() %}
-
+{% set collection = grav.get('flex').collection(collection_name) %}
 {% set current_month = 'today'|date('Ymd') %}
-{% set active_items = collection
-    |map(active_item_entry => active_item_entry.header)
+{% set active_items = collection.getKeys()
+    |map(active_item_entry_key => collection.get(active_item_entry_key).header|merge({flex_id: active_item_entry_key}))
     |filter(active_item => (active_item.from_date|date('Ymd') <= current_month and active_item.to_date|date('Ymd') >= current_month)) %}
 
-{"{{- title -}}":[
-{{- active_items|map(active_item => active_item|json_encode)|join(',')|raw -}}
-]}
+{"{{- title -}}":
+{{- active_items|json_encode|raw -}}
+}
