@@ -50,7 +50,7 @@ docker build --build-arg http_proxy=http://<proxy_ip>:<proxy_port> --build-arg h
 You only need to replace `proxy_ip` and `proxy_port`
 
 ### Docker build arguments
-* `subfolder` (Optional, Default: `/cms`) Moves the entire CMS content from the root folder into the given subfolder; used if the base URL does contain a sub domain, e.g. https://maps.zh.ch/cms 
+* `SUBFOLDER` (Optional, Default: `/cms`) Moves the entire CMS content from the root folder into the given subfolder; used if the base URL does contain a sub domain, e.g. https://maps.zh.ch/cms 
 
 ## Running Grav image:
 
