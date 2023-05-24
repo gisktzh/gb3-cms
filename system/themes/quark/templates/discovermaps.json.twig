@@ -14,5 +14,6 @@
 {% set active_items_string = active_items_string ~ active_item|json_encode|raw %}
 {% if not loop.last %}{% set active_items_string = active_items_string ~ ',' %}{% endif %}
 {% endfor %}
+{% set active_items_string = '[' ~ active_items_string ~ ']' %}
 {# === Output the whole JSON === #}
-{"{{- title -}}":[{{ active_items_string|raw }}]}
+{"{{- title -}}":{{ active_items_string|raw }}}
