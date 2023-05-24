@@ -19,6 +19,7 @@ DEFAULT_FILES=(
   "pages/02.discovermaps/discovermaps.md;pages/02.discovermaps"
   "pages/03.pageinfos/pageinfos.md;pages/03.pageinfos"
   "pages/04.mapinfos/mapinfos.md;pages/04.mapinfos"
+  "pages/05.frequentlyused/frequentlyused.md;pages/05.frequentlyused"
 )
 
 cat << "EOF"

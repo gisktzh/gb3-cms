@@ -47,6 +47,9 @@ services:
       - type: bind
         source: ./system/themes/quark/templates/mapinfos.json.twig
         target: /var/www/html${SUBFOLDER}/user/themes/quark/templates/mapinfos.json.twig
+      - type: bind
+        source: ./system/themes/quark/templates/frequentlyused.json.twig
+        target: /var/www/html${SUBFOLDER}/user/themes/quark/templates/frequentlyused.json.twig
 
       - type: volume
         source: all-grav-data
