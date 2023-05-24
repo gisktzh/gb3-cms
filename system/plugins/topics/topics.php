@@ -94,4 +94,13 @@ class TopicsPlugin extends Plugin
 
       return $children;
     }
+
+    /**
+     * Returns the current datetime as Unix timestamp
+     * @return int
+     */
+    public static function currentTimestamp(): int
+    {
+        return time();
+    }
 }
