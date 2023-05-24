@@ -1,0 +1,134 @@
+title: Häufig verwendet
+description: Ein Ordner mit häufig verwendeten Karten.
+type: flex-objects
+
+# Flex Configuration
+config:
+  # Administration Configuration
+  admin:
+    # Admin router (optional)
+    router:
+      path: '/frequentlyused'
+
+    # Admin menu (optional)
+    menu:
+      list:
+        route: '/frequentlyused'
+        title: Häufig verwendet
+        icon: fa-area-chart
+        # Authorization to collection admin
+        authorize: ['admin.topics.list', 'admin.super']
+        # Priority -10 .. 10 (highest goes up)
+        priority: 2
+
+    # Admin template type / folder
+    template: default
+
+    # Permissions
+    permissions:
+      # Primary permissions
+      admin.topics:
+        type: crudpl
+        label: FrequentlyUsed
+
+    # List view
+    list:
+      title: name
+      fields:
+        header.title:
+          link: edit
+
+    # Edit View
+    edit:
+      title:
+        template: '{{ object.header.title }}'
+
+    # Preview View
+    preview:
+      enabled: false
+      route:
+        #template: '/plugins/flex-objects/directory:frequentlyused'
+
+    # Data Export
+    export:
+      enabled: true
+      method: 'jsonSerialize'
+      formatter:
+        class: 'Grav\Framework\File\Formatter\YamlFormatter'
+      filename: 'frequentlyused'
+
+  # Site Configuration
+  site:
+    templates:
+      collection:
+        # Lookup for the template layout files for collections of objects
+        paths:
+          - 'flex/{TYPE}/collection/{LAYOUT}{EXT}'
+      object:
+        # Lookup for the template layout files for objects
+        paths:
+          - 'flex/{TYPE}/object/{LAYOUT}{EXT}'
+      defaults:
+        # Default template {TYPE}; overridden by filename of this blueprint if template folder exists
+        type: frequentlyused
+        # Default template {LAYOUT}; can be overridden in render calls (usually Twig in templates)
+        layout: default
+
+  # Data Configuration
+  data:
+    # Object class to be used, allowing custom methods for the object
+    object: 'Grav\Common\Flex\Types\Generic\GenericObject'
+    # Collection class to be used, allowing custom methods for the collections
+    collection: 'Grav\Common\Flex\Types\Generic\GenericCollection'
+    # Index class to be used, works as a quick database-like lookup index
+    index: 'Grav\Common\Flex\Types\Generic\GenericIndex'
+    storage:
+      # Storage class, use a folder storage (does support images and assets)
+      class: 'Grav\Framework\Flex\Storage\FolderStorage'
+      options:
+        formatter:
+          # File formatter class, in this case the file is stored in markdown
+          class: 'Grav\Framework\File\Formatter\JsonFormatter'
+        # JSON file where all the objects will be stored
+        folder: user-data://flex-objects/frequentlyused
+    ordering:
+      timestamp: DESC
+    search:
+      # Search options
+      options:
+        contains: 1
+      # Fields to be searched
+      fields:
+        - header.title
+
+form:
+  validation: loose
+
+  fields:
+    header.title:
+      type: text
+      autofocus: true
+      style: vertical
+      label: 'Titel'
+      validate:
+        required: true
+    header.description:
+      type: textarea
+      style: vertical
+      label: 'Beschreibung'
+      validate:
+        required: true
+    header.image:
+      type: file
+      style: vertical
+      label: 'Bild'
+      random_name: true
+      autofocus: false
+      destination: 'assets/uploads/frequentlyused'
+      multiple: false
+      accept:
+        - image/*
+    header.url:
+      type: url
+      style: vertical
+      label: 'Link zu Karte oder Daten'
