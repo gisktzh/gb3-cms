@@ -7,10 +7,11 @@ admin_list:
     by: updated_timestamp
     dir: desc
 directories:
-  1: 'blueprints://flex-objects/discovermaps.yaml'
-  2: 'blueprints://flex-objects/pages.yaml'
-  3: 'blueprints://flex-objects/topics.yaml'
-  4: 'blueprints://flex-objects/user-accounts.yaml'
-  5: 'blueprints://flex-objects/user-groups.yaml'
-  6: 'blueprints://flex-objects/pageinfos.yaml'
-  7: 'blueprints://flex-objects/mapinfos.yaml'
+  - 'blueprints://flex-objects/discovermaps.yaml'
+  - 'blueprints://flex-objects/pages.yaml'
+  - 'blueprints://flex-objects/topics.yaml'
+  - 'blueprints://flex-objects/user-accounts.yaml'
+  - 'blueprints://flex-objects/user-groups.yaml'
+  - 'blueprints://flex-objects/pageinfos.yaml'
+  - 'blueprints://flex-objects/mapinfos.yaml'
+  - 'blueprints://flex-objects/frequentlyused.yaml'
