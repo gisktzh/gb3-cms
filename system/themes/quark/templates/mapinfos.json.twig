@@ -10,4 +10,4 @@
 {# === Transform all filtered values to JSON === #}
 {% set active_items_string = active_items|json_encode|raw %}
 {# === Output the whole JSON === #}
-{"{{- title -}}":[{{ active_items_string|raw }}]}
+{"{{- title -}}":{{ active_items_string|raw }}}
