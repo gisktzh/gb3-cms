@@ -4,7 +4,7 @@ visible: false
 content:
     items: '@self.children'
     order:
-        by: timestamp
+        by: header.created
         dir: asc
 permissions: {  }
 ---

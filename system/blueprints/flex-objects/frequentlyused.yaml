@@ -92,7 +92,7 @@ config:
         # JSON file where all the objects will be stored
         folder: user-data://flex-objects/frequentlyused
     ordering:
-      timestamp: DESC
+      header.created: DESC
     search:
       # Search options
       options:
@@ -132,3 +132,6 @@ form:
       type: url
       style: vertical
       label: 'Link zu Karte oder Daten'
+    header.created:
+      type: hidden
+      data-default@: '\Grav\Plugin\TopicsPlugin::currentTimestamp'
