@@ -8,7 +8,7 @@
 {# === Transform all filtered values to JSON === #}
 {% set active_items_string = '' %}
 {% for active_item in active_items %}
-{% if active_item.image %}{% set active_item = active_item|merge({'image': (active_item.image|first)}) %}{% endif %}
+{% if active_item.image %}{% set active_item = active_item|merge({'image': (active_item.image|first)}) %}{% else %}{% set active_item = active_item|merge({'image': null}) %}{% endif %}
 {% set active_items_string = active_items_string ~ active_item|json_encode|raw %}
 {% if not loop.last %}{% set active_items_string = active_items_string ~ ',' %}{% endif %}
 {% endfor %}
