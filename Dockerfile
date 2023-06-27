@@ -121,4 +121,9 @@ RUN mkdir /cms_data/backup &&  \
     mv /var/www/html${SUBFOLDER}/backup /cms_data &&  \
     ln -s /cms_data/backup /var/www/html${SUBFOLDER}
 
+RUN mkdir /cms_data/logs &&  \
+    chown www-data:www-data /cms_data/logs &&  \
+    mv /var/www/html${SUBFOLDER}/logs /cms_data &&  \
+    ln -s /cms_data/logs /var/www/html${SUBFOLDER}
+
 ENTRYPOINT ["bash", "-c", "/.docker/entrypoint.sh /.docker/grav_defaults/user/"]
