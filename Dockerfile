@@ -128,9 +128,9 @@ RUN mkdir /cms_data/logs &&  \
     mv /var/www/html${SUBFOLDER}/logs /cms_data &&  \
     ln -s /cms_data/logs /var/www/html${SUBFOLDER}
 
-RUN mkdir /cms_data/apache2 &&  \
-    chown www-data:www-data /cms_data/apache2 &&  \
+RUN mkdir /cms_data/logs_apache2 &&  \
+    chown www-data:www-data /cms_data/logs_apache2 &&  \
     mv /var/log/apache2 /cms_data &&  \
-    ln -s /cms_data/apache2 /var/log/apache2
+    ln -s /cms_data/logs_apache2 /var/log/apache2
 
 ENTRYPOINT ["bash", "-c", "/.docker/entrypoint.sh /.docker/grav_defaults/user/"]
