@@ -97,9 +97,6 @@ USER root
 # Create rootdirectory where our symlinked data shall reside
 RUN mkdir /cms_data
 
-# Copy the custom Apache configuration file
-#COPY .docker/apache2.conf /etc/apache2/apache2.conf
-
 # Move folders that should be backupped to rootdirectory and set up symlinks
 RUN mkdir -p /cms_data/user/data &&  \
     chown www-data:www-data /cms_data/user/data &&  \
