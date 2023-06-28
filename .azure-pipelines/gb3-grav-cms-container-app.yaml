@@ -23,3 +23,5 @@ properties:
             volumeName: gb3-grav-cms-file-share
           - mountPath: /var/www/html/logs,
             volumeName: gb3-grav-cms-file-share
+          - mountPath: /var/log/apache2,
+            volumeName: gb3-grav-cms-file-share
