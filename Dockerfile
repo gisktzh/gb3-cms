@@ -30,7 +30,9 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     && docker-php-ext-configure gd --with-freetype --with-jpeg \
     && docker-php-ext-install -j$(nproc) gd \
     && docker-php-ext-install zip \
-    && rm -rf /var/lib/apt/lists/*
+    && rm -rf /var/lib/apt/lists/* \
+    && rm -rf /var/log/apache2/*
+
 
 # set recommended PHP.ini settings
 # see https://secure.php.net/manual/en/opcache.installation.php
@@ -120,5 +122,15 @@ RUN mkdir /cms_data/backup &&  \
     chown www-data:www-data /cms_data/backup &&  \
     mv /var/www/html${SUBFOLDER}/backup /cms_data &&  \
     ln -s /cms_data/backup /var/www/html${SUBFOLDER}
+
+RUN mkdir /cms_data/logs &&  \
+    chown www-data:www-data /cms_data/logs &&  \
+    mv /var/www/html${SUBFOLDER}/logs /cms_data &&  \
+    ln -s /cms_data/logs /var/www/html${SUBFOLDER}
+
+RUN mkdir /cms_data/logs_apache2 &&  \
+    chown www-data:www-data /cms_data/logs_apache2 &&  \
+    mv /var/log/apache2 /cms_data &&  \
+    ln -s /cms_data/logs_apache2 /var/log/apache2
 
 ENTRYPOINT ["bash", "-c", "/.docker/entrypoint.sh /.docker/grav_defaults/user/"]
