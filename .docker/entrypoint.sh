@@ -1,25 +1,34 @@
 #!/bin/bash
 
 # Default grav cms directory
-DEFAULT_GRAV_DIR="/cms_data/user"
+DEFAULT_GRAV_DIR="/cms_data"
 
-# set default files location to first argument of invocation
+# set default files/folders location to first argument of invocation
 DEFAULT_FILES_LOCATION="$1"
+
+# Array of default directories which should be created.
+DEFAULT_DIRECTORIES=(
+  "apache2"
+  "assets"
+  "backup"
+  "logs"
+  "user"
+)
 
 # Array of default files which should be moved.
 # Each entry is a string with two parts, delimited by a ";":
 # - [0] is the default file, relative to DEFAULT_FILES_LOCATION
 # - [1] is the target directory to where the file should be moved, relative to DEFAULT_GRAV_DIR
 DEFAULT_FILES=(
-  "accounts/admin.yaml;accounts"
-  "accounts/maintainer.yaml;accounts"
-  "accounts/writer.yaml;accounts"
-  "data/flex-objects/topics.json;data/flex-objects"
-  "pages/01.startpage/default.md;pages/01.startpage"
-  "pages/02.discovermaps/discovermaps.md;pages/02.discovermaps"
-  "pages/03.pageinfos/pageinfos.md;pages/03.pageinfos"
-  "pages/04.mapinfos/mapinfos.md;pages/04.mapinfos"
-  "pages/05.frequentlyused/frequentlyused.md;pages/05.frequentlyused"
+  "user/accounts/admin.yaml;user/accounts"
+  "user/accounts/maintainer.yaml;user/accounts"
+  "user/accounts/writer.yaml;user/accounts"
+  "user/data/flex-objects/topics.json;user/data/flex-objects"
+  "user/pages/01.startpage/default.md;user/pages/01.startpage"
+  "user/pages/02.discovermaps/discovermaps.md;user/pages/02.discovermaps"
+  "user/pages/03.pageinfos/pageinfos.md;user/pages/03.pageinfos"
+  "user/pages/04.mapinfos/mapinfos.md;user/pages/04.mapinfos"
+  "user/pages/05.frequentlyused/frequentlyused.md;user/pages/05.frequentlyused"
 )
 
 cat << "EOF"
@@ -46,12 +55,30 @@ cat << "EOF"
 
 EOF
 echo "Initializing GravCMS!"
-echo -e "Check for missing default files...\n"
 
 # shellcheck disable=SC2164
 cd "$DEFAULT_GRAV_DIR"
 
+# Check whether the directories exist, else create them
+echo -e "Check for missing default directories...\n"
+for directory in "${DEFAULT_DIRECTORIES[@]}"; do
+  echo "=> Checking if directory ${directory} exists..."
+
+  if ! test -d "${directory}"; then
+    echo "==> Directory does not exist, creating..."
+    mkdir "${directory}"
+    echo "==> Setting access rights..."
+    chown -R www-data:www-data "${directory}"
+    echo "==> Directory created!"
+  else
+    echo "==> Directory exists, continuing..."
+  fi
+
+  echo ""
+done
+
 # Check whether the files exist, else copy them
+echo -e "Check for missing default files...\n"
 for file in "${DEFAULT_FILES[@]}"; do
   IFS=';' read -r -a current_file <<< "$file"
   echo "=> Checking if ${current_file[0]} exists..."
@@ -71,9 +98,13 @@ for file in "${DEFAULT_FILES[@]}"; do
   echo ""
 done
 
-# Set ownership once again to overwrite root user when using bind mounts
-echo "Running CHMOD on user directory again..."
-chown -R www-data:www-data "$DEFAULT_GRAV_DIR"
+# Set ownership once again to overwrite root in all directories when using bind mounts
+echo "Running CHMOD on all directories again..."
+for directory in "${DEFAULT_DIRECTORIES[@]}"; do
+  echo "=> ${DEFAULT_GRAV_DIR}/${directory}"
+  chown -R www-data:www-data "${DEFAULT_GRAV_DIR}/${directory}"
+done
+echo ""
 
 # start the actual application
 echo -e "We are good to go, booting GravCMS now! (つ -‘ _ ‘- )つ\n"
