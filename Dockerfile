@@ -97,7 +97,9 @@ USER root
 # Create rootdirectory where our symlinked data shall reside
 RUN mkdir /cms_data
 
-# Move folders that should be backupped to rootdirectory and set up symlinks
+# Move folders that should be accessible through the volume to rootdirectory and set up symlinks
+# REMARK: do not forget to include the following folders / files as well in '.docker/entrypoint.sh' -> DEFAULT_DIRECTORIES / DEFAULT_FILES
+#         otherwise they might be missing in the volume later and lead to errors like: <"mkdir: cannot create directory '/var/log/apache2': File exists">
 RUN mkdir -p /cms_data/user/data &&  \
     chown www-data:www-data /cms_data/user/data &&  \
     mv /var/www/html${SUBFOLDER}/user/data /cms_data/user &&  \
@@ -133,4 +135,4 @@ RUN mkdir /cms_data/apache2 &&  \
     mv /var/log/apache2 /cms_data &&  \
     ln -s /cms_data/apache2 /var/log/apache2
 
-ENTRYPOINT ["bash", "-c", "/.docker/entrypoint.sh /.docker/grav_defaults/user/"]
+ENTRYPOINT ["bash", "-c", "/.docker/entrypoint.sh /.docker/grav_defaults/"]
