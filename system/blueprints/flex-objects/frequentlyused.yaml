@@ -129,7 +129,7 @@ form:
       accept:
         - image/*
     header.url:
-      type: url
+      type: text
       style: vertical
       label: 'Link zu Karte oder Daten'
     header.created:
