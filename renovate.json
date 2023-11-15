@@ -1,6 +1,6 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "extends": ["config:recommended", "mergeConfidence:all-badges"],
+  "extends": ["config:recommended", "mergeConfidence:all-badges", ":automergeDisabled"],
   "assignees": ["sebastian.wendland@ebp.ch"],
   "reviewers": ["sebastian.wendland@ebp.ch"]
 }
