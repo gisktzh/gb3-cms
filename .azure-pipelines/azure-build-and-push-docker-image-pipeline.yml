@@ -6,7 +6,7 @@ resources:
   - repo: self
 
 variables:
-  - template: 'templates/variables.yaml'
+  - template: 'templates/variables.yml'
 
 stages:
   - stage: Build
@@ -17,16 +17,7 @@ stages:
         pool:
           vmImage: $(vmImageName)
         steps:
-          - task: Docker@2
-            displayName: Build
-            inputs:
-              command: build
-              repository: $(imageRepository)
-              dockerfile: $(dockerfilePath)
-              containerRegistry: $(dockerRegistryServiceConnection)
-              tags: |
-                $(tag)
-              arguments: '--build-arg SUBFOLDER='
+          - template: 'templates/build-docker.yml'
           - task: Docker@2
             displayName: Push
             inputs:
@@ -44,7 +35,7 @@ stages:
               imageToDeploy: $(containerRegistry)/$(imageRepository):$(tag)
               location: 'Switzerland North'
               disableTelemetry: true
-              yamlConfigPath: .azure-pipelines/gb3-grav-cms-container-app.yaml
+              yamlConfigPath: .azure-pipelines/gb3-grav-cms-container-app.yml
           - task: AzureCLI@2
             displayName: Update the container app revision using the build id.
             inputs:
