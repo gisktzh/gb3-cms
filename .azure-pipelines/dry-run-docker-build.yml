@@ -4,7 +4,7 @@ variables:
   - template: 'templates/variables.yml'
 
 pool:
-  vmImage: $(VM_IMAGE)
+  vmImage: $(vmImageName)
 
 steps:
   - template: 'templates/build-docker.yml'
