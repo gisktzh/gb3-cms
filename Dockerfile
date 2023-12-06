@@ -97,6 +97,9 @@ USER root
 # Create rootdirectory where our symlinked data shall reside
 RUN mkdir /cms_data
 
+# Copy apache2.conf for Apache2 custom log with X-Forwarded-For
+COPY .docker/apache2.conf /etc/apache2/apache2.conf
+
 # Move folders that should be accessible through the volume to rootdirectory and set up symlinks
 # REMARK: do not forget to include the following folders / files as well in '.docker/entrypoint.sh' -> DEFAULT_DIRECTORIES / DEFAULT_FILES
 #         otherwise they might be missing in the volume later and lead to errors like: <"mkdir: cannot create directory '/var/log/apache2': File exists">
