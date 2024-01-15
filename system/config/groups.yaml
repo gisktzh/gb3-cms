@@ -6,7 +6,6 @@ publisher:
       topics: true
       discovermaps: true
       pageinfos: true
-      mapinfos: true
       frequentlyused: true
   enabled: true
 maintainer:

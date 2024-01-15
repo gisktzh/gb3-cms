@@ -30,7 +30,6 @@ DEFAULT_FILES=(
   "user/pages/01.startpage/default.md;user/pages/01.startpage;www-data:www-data"
   "user/pages/02.discovermaps/discovermaps.md;user/pages/02.discovermaps;www-data:www-data"
   "user/pages/03.pageinfos/pageinfos.md;user/pages/03.pageinfos;www-data:www-data"
-  "user/pages/04.mapinfos/mapinfos.md;user/pages/04.mapinfos;www-data:www-data"
   "user/pages/05.frequentlyused/frequentlyused.md;user/pages/05.frequentlyused;www-data:www-data"
 )
 
