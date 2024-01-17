@@ -13,5 +13,4 @@ directories:
   - 'blueprints://flex-objects/user-accounts.yaml'
   - 'blueprints://flex-objects/user-groups.yaml'
   - 'blueprints://flex-objects/pageinfos.yaml'
-  - 'blueprints://flex-objects/mapinfos.yaml'
   - 'blueprints://flex-objects/frequentlyused.yaml'
