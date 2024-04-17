@@ -100,9 +100,10 @@ This command will boot the container and mount two local folders for synchronizi
 ## Caching
 
 For the uploaded images, we use an apache-based caching mechanism. This is done by setting the `Cache-Control` header
-to `max-age=31536000` for all files in the `assets` folder. This means that the browser will cache the files for a year
-and only request them again if the cache is cleared. Because Grav will upload user-provided files to `assets/uploads`,
-this folder is also cached.
+to `max-age=31536000` for all files in the `assets` folder. This value seems to be recommended if you look for similar 
+issues throughout the web. This means that the browser will cache the files for a year and only request them again if 
+the cache is cleared. Because Grav is configured to upload user-provided files to `assets/uploads`, this folder is also 
+cached.
 
 Note that this is only done for the parent `assets` folder as well, so other files (e.g. images used by Grav itself) are
 also cached, which *could* lead to problems if the files are updated. We did not move the the `.htaccess` file to the 

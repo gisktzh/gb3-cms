@@ -1,7 +1,7 @@
 # This file, if renamed to .htaccess and placed within a directory, will aggressively cache all matching assets
 # (i.e. images) by setting the cache age to 1 year as well as by removing the ETag and Last-Modified to prevent them
 # from being used for cache invalidation.
-<filesMatch ".(jpg|jpeg|png|gif|js|ico|swf)$">
+<filesMatch ".(jpg|jpeg|png|gif|js|ico|swf|webp)$">
     Header set Cache-Control "max-age=31536000, public"
     Header unset Last-Modified
     Header unset ETag
