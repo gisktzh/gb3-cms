@@ -1,4 +1,4 @@
-FROM php:8.3.1-apache
+FROM php:8.3.6-apache
 LABEL maintainer="Andy Miller <rhuk@getgrav.org> (@rhukster)"
 
 ARG http_proxy
