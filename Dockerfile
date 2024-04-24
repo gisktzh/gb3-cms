@@ -4,8 +4,8 @@ LABEL maintainer="Andy Miller <rhuk@getgrav.org> (@rhukster)"
 ARG http_proxy
 ARG SUBFOLDER='/cms'
 
-# Enable Apache Rewrite + Expires Module
-RUN a2enmod rewrite expires && \
+# Enable Apache Rewrite + Expires + headers Module
+RUN a2enmod rewrite expires headers && \
     sed -i 's/ServerTokens OS/ServerTokens ProductOnly/g' \
     /etc/apache2/conf-available/security.conf
 
@@ -63,6 +63,9 @@ RUN curl -k -o grav-admin.zip -SL https://getgrav.org/download/core/grav-admin/$
     unzip grav-admin.zip && \
     mv -T /var/www/grav-admin /var/www/html${SUBFOLDER} && \
     rm grav-admin.zip
+
+# Move the .htaccess_for_caching file to .htaccess in the assets/ folder to enable asset caching
+COPY .apache/.htaccess_for_caching /var/www/html${SUBFOLDER}/assets/.htaccess
 
 # Create cron job for Grav maintenance scripts
 RUN (crontab -l; echo "* * * * * cd /var/www/html${SUBFOLDER};/usr/local/bin/php bin/grav scheduler 1>> /dev/null 2>&1") | crontab -
