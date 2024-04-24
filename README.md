@@ -94,3 +94,22 @@ docker run -p 8080:80 -v nameOfVolume:/cms_data --name gb3-grav-cms gb3-grav-cms
 Example: `docker run -p 8080:80 -v grav-data:/cms_data --name gb3-grav-cms gb3-grav-cms:latest`
 
 This command will boot the container and mount two local folders for synchronizing data.
+
+# Notes
+
+## Caching
+
+For the uploaded images, we use an apache-based caching mechanism. This is done by setting the `Cache-Control` header
+to `max-age=31536000` for all files in the `assets` folder. This value seems to be recommended if you look for similar 
+issues throughout the web. This means that the browser will cache the files for a year and only request them again if 
+the cache is cleared. Because Grav is configured to upload user-provided files to `assets/uploads`, this folder is also 
+cached.
+
+Note that this is only done for the parent `assets` folder as well, so other files (e.g. images used by Grav itself) are
+also cached, which *could* lead to problems if the files are updated. We did not move the the `.htaccess` file to the 
+`uploads` folder, as this folder is created and managed by Grav and we do not want to interfere with CHMOD there. *If*
+this should become an issue, this would be the first thing to change.
+
+If issues arise because we so aggressively cache (e.g. sometimes, the image will still be displayed even if it does no
+longer exist (use `CTRL+F5` to force a reload)), we can change the caching mechanism to a more conservative one; or we
+could add cache busting parameters in the frontend (e.g. daily timestamps to reload them each day).
