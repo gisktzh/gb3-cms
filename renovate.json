@@ -1,6 +1,6 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "extends": ["config:recommended", "mergeConfidence:all-badges", ":automergeDisabled"],
-  "assignees": ["sebastian.wendland@ebp.ch"],
-  "reviewers": ["sebastian.wendland@ebp.ch"]
+  "extends": ["local>Renovate_Bot/renovate-presets"],
+  "assignees": ["gb3-developers"],
+  "reviewers": ["gb3-developers"]
 }
