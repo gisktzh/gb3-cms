@@ -3,12 +3,12 @@ Grav is a modern open source flat-file CMS. This repository contains the officia
 
 This docker image is currently pretty minimal and uses:
 
-* apache-2.4.56
+* apache
 * GD library
 * Unzip library
-* php8.1.17
-* php8.1.17-opcache
-* php8.1.17-yaml
+* php8.x
+* php8.x-opcache
+* php8.x-yaml
 * cron
 * vim editor
 
