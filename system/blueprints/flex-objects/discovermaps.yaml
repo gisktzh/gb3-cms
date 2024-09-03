@@ -136,6 +136,12 @@ form:
         - image/*
       validate:
         required: false # required does not work for files/images; known bug: https://github.com/getgrav/grav-plugin-form/issues/116
+    header.image_alt:
+      type: text
+      style: vertical
+      label: 'Alternativer Kartenbild-Beschreibungstext (Alt-Text)'
+      validate:
+        required: false
     header.id:
       type: select
       style: vertical
