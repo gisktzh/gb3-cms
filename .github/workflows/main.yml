@@ -1,0 +1,21 @@
+name: GB3 CMS
+
+on:
+  push:
+    branches:
+      - main
+      - develop
+  pull_request:
+    branches:
+      - main
+      - develop
+
+jobs:
+  docker:
+    name: Docker Dry Run
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: gisktzh/github-actions/docker-dry-run@main
+        with:
+          image: gb3-cms
