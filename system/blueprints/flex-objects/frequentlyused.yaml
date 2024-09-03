@@ -128,6 +128,12 @@ form:
       multiple: false
       accept:
         - image/*
+    header.image_alt:
+      type: text
+      style: vertical
+      label: 'Alternativer Bildbeschreibungstext (Alt-Text)'
+      validate:
+        required: false
     header.url:
       type: text
       style: vertical
