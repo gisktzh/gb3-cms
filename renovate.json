@@ -1,6 +1,18 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "extends": ["local>Renovate_Bot/renovate-presets"],
+  "extends": ["config:recommended"],
   "assignees": ["gb3-developers"],
-  "reviewers": ["gb3-developers"]
+  "reviewers": ["gb3-developers"],
+  "packageRules": [
+    {
+      "matchUpdateTypes": ["minor", "patch", "pin", "digest", "lockFileMaintenance", "bump"],
+      "automerge": true,
+      "description": "This basic rule allows automatic merges for all packages for minor or patch level changes. Anything higher than that (like major) will NOT automatically be merged."
+    },
+    {
+      "matchManagers": ["dockerfile", "kubernetes"],
+      "automerge": false,
+      "description": "Do not automerge docker or kubernetes updates as they have a great potential for breaking changes."
+    }
+  ]
 }
