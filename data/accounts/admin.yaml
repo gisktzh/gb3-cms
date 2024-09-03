@@ -2,7 +2,7 @@ state: enabled
 email: admin@example.com
 fullname: admin
 title: Administrator
-hashed_password: ***REMOVED***
+hashed_password: $2y$10$U3nONWGxVCl.Sm1SPh..luISqH0q11j/n7M6ezoELcAi86CsUCDI2
 language: en
 content_editor: default
 avatar: {  }

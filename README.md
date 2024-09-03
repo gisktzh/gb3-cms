@@ -36,6 +36,19 @@ allows for backups.
 Since we need to provide initial data (e.g. initial users or initial topics), the Docker entrypoint file checks for the
 existence of these files and only copies them if they do not exist.
 
+After the initial update there will be three users available:
+- **admin**\
+The administrator has full access to the CMS and all content.\
+Default password: `Admin1234`
+- **maintainer**\
+The maintainer has access to plugins and maintenance tools like backup.\
+Default password: `Maintainer1234`
+- **writer**\
+The writer has access to the content and can create, edit and delete pages.\
+Default password: `Writer1234`
+
+> **⚠ Important:** Change the default passwords for three pre-installed users immediately after the initial setup.
+
 ## Building the image from Dockerfile
 
 ```shell
