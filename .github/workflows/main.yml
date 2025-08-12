@@ -15,7 +15,7 @@ jobs:
     name: Docker Dry Run
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
       - uses: gisktzh/github-actions/docker-dry-run@main
         with:
           image: gb3-cms
