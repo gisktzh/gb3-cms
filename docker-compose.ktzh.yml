@@ -1,0 +1,25 @@
+services:
+  grav:
+    restart: always
+    ports:
+      - 8082:80
+    environment:
+      - TZ=Europe/Zurich
+    build:
+      context: ./
+      args:
+        - http_proxy=http://igw-axzh.abxsec.com:8080
+        - https_proxy=http://igw-axzh.abxsec.com:8080
+    image: gitlab.ktzh.ch:5050/gis/gb3-cms/gb3-grav-cms:latest
+    container_name: gb3-grav-cms
+    volumes:
+      - grav-data:/cms_data
+    logging:
+      options:
+        max-size: "50m"
+        max-file: "5"
+    
+volumes:
+  grav-data:
+    external: true
+    name: grav-data
