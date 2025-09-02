@@ -24,7 +24,6 @@ build:
     - docker compose -f docker-compose.ktzh.yml build --pull
     - docker compose -f docker-compose.ktzh.yml push
 
-
 deploy:
   image: ubuntu:22.04
   stage: deploy
@@ -45,4 +44,3 @@ deploy:
   after_script:
     - rm -rf ~/.ssh
   when: manual
-  
