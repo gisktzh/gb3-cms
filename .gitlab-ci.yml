@@ -45,3 +45,4 @@ deploy:
   after_script:
     - rm -rf ~/.ssh
   when: manual
+  
