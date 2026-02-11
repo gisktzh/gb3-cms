@@ -16,7 +16,6 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     libjpeg62-turbo-dev \
     libpng-dev \
     libyaml-dev \
-    libzip4 \
     libzip-dev \
     zlib1g-dev \
     libicu-dev \
@@ -24,7 +23,6 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     git \
     cron \
     vim \
-    && docker-php-ext-install opcache \
     && docker-php-ext-configure intl \
     && docker-php-ext-install intl \
     && docker-php-ext-configure gd --with-freetype --with-jpeg \
