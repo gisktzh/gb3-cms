@@ -1,4 +1,4 @@
-FROM php:8.4.6-apache
+FROM php:8.5.2-apache
 LABEL maintainer="Andy Miller <rhuk@getgrav.org> (@rhukster)"
 
 ARG http_proxy
@@ -16,7 +16,6 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     libjpeg62-turbo-dev \
     libpng-dev \
     libyaml-dev \
-    libzip4 \
     libzip-dev \
     zlib1g-dev \
     libicu-dev \
@@ -24,7 +23,6 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     git \
     cron \
     vim \
-    && docker-php-ext-install opcache \
     && docker-php-ext-configure intl \
     && docker-php-ext-install intl \
     && docker-php-ext-configure gd --with-freetype --with-jpeg \
