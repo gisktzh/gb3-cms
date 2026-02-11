@@ -25,7 +25,7 @@ build:
     - docker compose -f docker-compose.ktzh.yml push
 
 deploy:
-  image: ubuntu:22.04
+  image: ubuntu:24.04
   stage: deploy
   tags: [docker]
   variables:
