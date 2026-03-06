@@ -8,11 +8,11 @@ variables:
   CA_CERTIFICATE: "$CA_CERTIFICATE"
 
 build:
-  image: docker:29.2.1
+  image: docker:29.3.0
   stage: build
   tags: [docker]
   services:
-    - name: docker:29.2.1-dind
+    - name: docker:29.3.0-dind
       command:
         - /bin/sh
         - -c
