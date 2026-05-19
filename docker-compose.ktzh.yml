@@ -7,9 +7,6 @@ services:
       - TZ=Europe/Zurich
     build:
       context: ./
-      args:
-        - http_proxy=http://igw-axzh.abxsec.com:8080
-        - https_proxy=http://igw-axzh.abxsec.com:8080
     image: gitlab.ktzh.ch:5050/gis/gb3-cms/gb3-grav-cms:latest
     container_name: gb3-grav-cms
     volumes:
