@@ -57,7 +57,7 @@ ARG GRAV_VERSION=1.7.53.2
 
 # Install grav
 WORKDIR /var/www
-RUN curl -k -o grav-admin.zip -SL https://getgrav.org/download/core/grav-admin/${GRAV_VERSION} && \
+RUN curl -k -o grav-admin.zip -SL https://github.com/getgrav/grav/releases/download/${GRAV_VERSION}/grav-admin-v${GRAV_VERSION}.zip && \
     unzip grav-admin.zip && \
     mv -T /var/www/grav-admin /var/www/html${SUBFOLDER} && \
     rm grav-admin.zip
