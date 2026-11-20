@@ -1,4 +1,4 @@
-FROM php:8.5.12-apache
+FROM php:8.5.13-apache
 LABEL maintainer="Andy Miller <rhuk@getgrav.org> (@rhukster)"
 
 ARG http_proxy
@@ -53,7 +53,7 @@ RUN chown www-data:www-data /var/www
 USER www-data
 
 # Define Grav specific version of Grav or use latest stable
-ARG GRAV_VERSION=1.7.53.6
+ARG GRAV_VERSION=1.7.53.11
 
 # Install grav
 WORKDIR /var/www
